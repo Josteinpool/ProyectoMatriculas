@@ -14,8 +14,8 @@ body {
 }
 
 .logo {
-  width: 120px;
-  margin-bottom: 10px;
+  width: 220px;
+  margin-bottom: -10px;
 }
 
 h1 {
@@ -86,3 +86,4 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
