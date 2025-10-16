@@ -32,10 +32,10 @@
       </ul>
     </section>
     <!-- ======== INFORMACIÓN PERSONAL ======== -->
-<section id="info-personal" class="content" style="display: none;">
-  <h2>Información Personal del Estudiante</h2>
+    <section id="info-personal" class="content" style="display: none;">
+      <h2>Información Personal del Estudiante</h2>
 
-  <form id="formInfoPersonal" class="info-form">
+        <form id="formInfoPersonal" class="info-form">
 
     <div class="form-row">
       <label for="nombres">Nombres:</label>
@@ -151,9 +151,172 @@
     </div>
 
     <button type="submit" class="save-btn">Guardar Información</button>
-  </form>
-</section>
+     </form>
+    </section>
 
+      <!-- Pestaña: Información General -->
+<div id="info-general" class="content" style="display: none;">
+  <h2>Información General</h2>
+
+  <form id="form-info-general">
+    <!-- Dirección y Barrio -->
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" name="direccion" required>
+
+    <label for="barrio">Barrio:</label>
+    <input type="text" id="barrio" name="barrio" required>
+
+    <!-- Madre cabeza de familia -->
+    <label for="madre-cabeza">Alumno Madre Cabeza de Familia:</label>
+    <select id="madre-cabeza" name="madre-cabeza" required>
+      <option value="">Seleccione</option>
+      <option value="si">Sí</option>
+      <option value="no">No</option>
+    </select>
+
+    <!-- Estrato -->
+    <label for="estrato">Estrato:</label>
+    <select id="estrato" name="estrato" required>
+      <option value="">Seleccione</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+
+    <!-- Municipio -->
+    <label for="municipio">Municipio:</label>
+    <input type="text" id="municipio" name="municipio" required>
+
+    <!-- Información / Año -->
+    <p><strong>Historial Académico Año 2024:</strong><br>
+    (Por favor diligenciar todos los espacios: Para Primaria desde grado Jardín y para Bachillerato desde grado 5°)</p>
+
+    <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse: collapse;">
+      <thead style="background:#f1f1f1;">
+        <tr>
+          <th>Año</th>
+          <th>Colegio</th>
+          <th>Ciudad</th>
+          <th>Grado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+      </tbody>
+    </table>
+
+    <!-- Sisben -->
+    <label for="sisben">Sisben:</label>
+    <select id="sisben" name="sisben" required>
+      <option value="">Seleccione</option>
+      <option value="si">Sí</option>
+      <option value="no">No</option>
+    </select>
+
+    <!-- EPS -->
+    <label for="eps">IPS/EPS:</label>
+    <input type="text" id="eps" name="eps" required>
+
+    <!-- Etnia -->
+    <label for="etnia">Etnia:</label>
+    <select id="etnia" name="etnia">
+      <option value="">Seleccione</option>
+      <option value="NINGUNA">NINGUNA</option>
+      <option value="AFRODESCENDIENTE">AFRODESCENDIENTE</option>
+      <option value="ACHAGUA">ACHAGUA</option>
+      <option value="AMBALO">AMBALO</option>
+      <option value="AMORUA">AMORUA</option>
+      <option value="ARHUACO">ARHUACO</option>
+      <option value="AWA">AWA</option>
+      <option value="BANIVA">BANIVA</option>
+      <option value="BARA">BARA</option>
+      <option value="BARASANO">BARASANO</option>
+      <option value="BARI">BARI</option>
+      <option value="BETOYE">BETOYE (GUAHIBO)</option>
+      <option value="BORA">BORA</option>
+      <option value="CAMENTSA">CAMENTSA (KAMSA - KAMENTSA)</option>
+      <option value="CHIMILAS">CHIMILAS</option>
+      <option value="CHIRICOA">CHIRICOA</option>
+      <option value="COREGUAJE">COREGUAJE</option>
+      <option value="COCAMA">COCAMA</option>
+      <option value="CUNA">CUNA</option>
+      <option value="DESANO">DESANO</option>
+      <option value="EMBERA CHAMI">EMBERA CHAMI</option>
+      <option value="EMBERA KATIO">EMBERA KATIO</option>
+      <option value="GUAMBIANO">GUAMBIANO</option>
+      <option value="INGA">INGA</option>
+      <option value="KOGUI">KOGUI</option>
+      <option value="MUISCA">MUISCA</option>
+      <option value="NEGRITUDES">NEGRITUDES</option>
+      <option value="NUKAK">NUKAK MAKU</option>
+      <option value="PAEZ">PAEZ (NASA)</option>
+      <option value="PIJAO">PIJAO</option>
+      <option value="PUINAVE">PUINAVE</option>
+      <option value="RAIZAL">RAIZAL</option>
+      <option value="WAYUU">WAYUU</option>
+      <option value="YANACONA">YANACONA</option>
+      <option value="ZENU">ZENU (SENU)</option>
+      <option value="NO APLICA">NO APLICA</option>
+    </select>
+
+    <!-- Desplazado -->
+    <label for="desplazado">Desplazado:</label>
+    <select id="desplazado" name="desplazado">
+      <option value="">Seleccione</option>
+      <option value="si">Sí</option>
+      <option value="no">No</option>
+    </select>
+
+    <!-- Discapacidad -->
+    <label for="discapacidad-diagnostico">Discapacidad Diagnosticada:</label>
+    <select id="discapacidad-diagnostico" name="discapacidad-diagnostico">
+      <option value="">Seleccione</option>
+      <option value="si">Sí</option>
+      <option value="no">No</option>
+    </select>
+
+    <div id="discapacidad-div" style="display: none;">
+      <label for="discapacidad">Tipo de Discapacidad:</label>
+      <select id="discapacidad" name="discapacidad">
+        <option value="">Seleccione</option>
+        <option value="fisica">DISCAPACIDAD FÍSICA</option>
+        <option value="auditiva">DISCAPACIDAD AUDITIVA</option>
+        <option value="visual">DISCAPACIDAD VISUAL</option>
+        <option value="sordoceguera">SORDOCEGUERA</option>
+        <option value="intelectual">DISCAPACIDAD INTELECTUAL</option>
+        <option value="psicosocial">DISCAPACIDAD PSICOSOCIAL (MENTAL)</option>
+        <option value="multiple">DISCAPACIDAD MÚLTIPLE</option>
+      </select>
+
+      <label for="certificado">Adjuntar Certificado:</label>
+      <input type="file" id="certificado" name="certificado">
+    </div>
+
+    <!-- Hermanos -->
+    <label for="hermanos">Número de Hermanos:</label>
+    <input type="number" id="hermanos" name="hermanos">
+
+    <label for="lugar-hermanos">Lugar que ocupa entre ellos:</label>
+    <input type="number" id="lugar-hermanos" name="lugar-hermanos">
+
+    <label for="hermanos-colegio">¿Tiene hermanos en el colegio?:</label>
+    <select id="hermanos-colegio" name="hermanos-colegio">
+      <option value="">Seleccione</option>
+      <option value="si">Sí</option>
+      <option value="no">No</option>
+    </select>
+
+    <!-- Lateralidad -->
+    <label for="lateralidad">Lateralidad del estudiant
 
   </div>
   

@@ -120,4 +120,7 @@ input:focus, select:focus {
 .save-btn:hover {
   background: #005bb5;
 }
-
+/* Cambiar color del texto en inputs */
+input, select {
+  color: #333;
+}
