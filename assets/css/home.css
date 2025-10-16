@@ -124,3 +124,50 @@ input:focus, select:focus {
 input, select {
   color: #333;
 }
+
+/* ==== FORMULARIO: INFORMACIÓN GENERAL ==== */
+
+.info-general-form label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 600;
+}
+
+.info-general-form input,
+.info-general-form select,
+.info-general-form textarea {
+  margin-bottom: 14px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ajuste para la tabla del historial académico */
+.info-general-form table input {
+  width: 100%;
+  padding: 6px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Espacio general dentro del formulario */
+.info-general-form {
+  padding-bottom: 25px;
+}
+
+/* Espacio entre combos seguidos */
+.info-general-form select + label {
+  margin-top: 15px;
+}
+
+/* Margen para los botones o inputs tipo file */
+.info-general-form button,
+.info-general-form input[type="file"] {
+  margin-top: 15px;
+}
