@@ -28,3 +28,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+// === Mostrar / ocultar campo de discapacidad ===
+document.addEventListener("DOMContentLoaded", () => {
+  const diagnostico = document.getElementById("discapacidad-diagnostico");
+  const divDiscapacidad = document.getElementById("discapacidad-div");
+
+  if (diagnostico && divDiscapacidad) {
+    diagnostico.addEventListener("change", () => {
+      const mostrar = diagnostico.value === "si";
+      divDiscapacidad.style.display = mostrar ? "block" : "none";
+      
+      // Limpiar los campos si se oculta
+      if (!mostrar) {
+        document.getElementById("discapacidad").value = "";
+        document.getElementById("certificado").value = "";
+      }
+    });
+  }
+});
