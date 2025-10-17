@@ -48,3 +48,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+// === Mostrar/ocultar campos de salud ===
+document.addEventListener("DOMContentLoaded", () => {
+  // Para alergias a medicamentos
+  const alergiaSelect = document.getElementById("alergia-medicamentos");
+  const alergiaDiv = document.getElementById("alergia-especificar-div");
+  
+  if (alergiaSelect && alergiaDiv) {
+    alergiaSelect.addEventListener("change", () => {
+      const mostrar = alergiaSelect.value === "si";
+      alergiaDiv.style.display = mostrar ? "block" : "none";
+      if (!mostrar) {
+        document.getElementById("alergia-especificar").value = "";
+      }
+    });
+  }
+
+  // Para enfermedades diagnosticadas
+  const enfermedadSelect = document.getElementById("enfermedad-diagnosticada");
+  const enfermedadDiv = document.getElementById("enfermedad-especificar-div");
+  
+  if (enfermedadSelect && enfermedadDiv) {
+    enfermedadSelect.addEventListener("change", () => {
+      const mostrar = enfermedadSelect.value === "si";
+      enfermedadDiv.style.display = mostrar ? "block" : "none";
+      if (!mostrar) {
+        document.getElementById("enfermedad-especificar").value = "";
+      }
+    });
+  }
+});

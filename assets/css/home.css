@@ -218,3 +218,255 @@ label[required]::after {
   color: red;
   font-weight: bold;
 }
+
+/* ======== ESTILOS PARA LINK Y DOCUMENTOS ======== */
+.paso-item {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #0078d7;
+}
+
+.paso-item h3 {
+  color: #0078d7;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.link-container {
+  background: white;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+.document-link {
+  color: #0078d7;
+  text-decoration: none;
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.document-link:hover {
+  text-decoration: underline;
+}
+
+.documentos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.documento-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.documento-icon {
+  font-size: 18px;
+}
+
+.documento-nombre {
+  flex: 1;
+  font-weight: 500;
+  color: #333;
+}
+
+.descargar-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.descargar-btn:hover {
+  background: #218838;
+}
+
+.aviso-importante {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 15px;
+  color: #856404;
+}
+
+/* ======== ESTILOS PARA ADJUNTAR DOCUMENTOS ======== */
+.documentos-seccion {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.documentos-seccion h3 {
+  color: #0078d7;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #0078d7;
+  padding-bottom: 8px;
+}
+
+.documento-adjunto {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+/* DOCUMENTOS OBLIGATORIOS - Naranja */
+.documento-adjunto.obligatorio {
+  border-left: 4px solid #ff9800;
+  background: #fffaf0;
+}
+
+/* DOCUMENTOS OPCIONALES - Azul */
+.documento-adjunto.opcional {
+  border-left: 4px solid #0078d7;
+  background: #f0f8ff;
+}
+
+.documento-adjunto label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.documento-adjunto label small {
+  font-weight: normal;
+  color: #666;
+  display: block;
+  margin-top: 4px;
+}
+
+.documento-adjunto input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f9f9f9;
+}
+
+.requerido {
+  color: #ff9800;
+  font-weight: bold;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.opcional-text {
+  color: #0078d7;
+  font-weight: bold;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.sub-documentos {
+  margin-left: 0;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sub-documento {
+  margin-bottom: 0;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  border-left: 3px solid #0078d7;
+}
+
+.sub-documento label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #495057;
+  display: block;
+}
+
+.sub-documento input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background: white;
+  font-size: 14px;
+}
+
+.aviso-informativo {
+  background: #e3f2fd;
+  border: 1px solid #bbdefb;
+  padding: 12px;
+  border-radius: 6px;
+  color: #1565c0;
+}
+
+/* ======== BOTONES DE ADJUNTAR ARCHIVOS EN VERDE ======== */
+/* ======== BOTONES DE ARCHIVO POR TIPO ======== */
+
+/* BOTONES OBLIGATORIOS - Amarillo/Naranja */
+.documento-adjunto.obligatorio input[type="file"]::file-selector-button {
+  background: #ff9800;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 10px;
+  transition: background 0.3s;
+}
+
+.documento-adjunto.obligatorio input[type="file"]::file-selector-button:hover {
+  background: #f57c00;
+}
+
+/* BOTONES OPCIONALES - Azul */
+.documento-adjunto.opcional input[type="file"]::file-selector-button {
+  background: #0078d7;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 10px;
+  transition: background 0.3s;
+}
+
+.documento-adjunto.opcional input[type="file"]::file-selector-button:hover {
+  background: #005bb5;
+}
+
+/* Para sub-documentos (si los quieres igual) */
+.sub-documento input[type="file"]::file-selector-button {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 8px;
+  transition: background 0.3s;
+}
+
+.sub-documento input[type="file"]::file-selector-button:hover {
+  background: #545b62;
+}

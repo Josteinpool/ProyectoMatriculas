@@ -783,6 +783,540 @@
     <button type="submit" class="save-btn">Guardar Información</button>
   </form>
 </section>
+
+<!-- ======== OTRO ACUDIENTE ======== -->
+<section id="otro-acudiente" class="content" style="display: none;">
+  <h2>Otro Acudiente</h2>
+
+  <form id="form-otro-acudiente" class="info-general-form">
+    
+    <!-- Nombres y Apellidos -->
+    <div class="form-row-inline">
+      <div class="form-group">
+        <label for="acudiente-nombres" required>Nombres:</label>
+        <input type="text" id="acudiente-nombres" name="acudiente-nombres" required>
+      </div>
+      <div class="form-group">
+        <label for="acudiente-apellidos" required>Apellidos:</label>
+        <input type="text" id="acudiente-apellidos" name="acudiente-apellidos" required>
+      </div>
+    </div>
+
+    <!-- Celular y Teléfono Residencia -->
+    <div class="form-row-inline">
+      <div class="form-group">
+        <label for="acudiente-celular" required>Número Celular:</label>
+        <input type="tel" id="acudiente-celular" name="acudiente-celular" required>
+      </div>
+      <div class="form-group">
+        <label for="acudiente-telefono">Teléfono Residencia (si tiene):</label>
+        <input type="tel" id="acudiente-telefono" name="acudiente-telefono">
+      </div>
+    </div>
+
+    <!-- Dirección y Ciudad -->
+    <div class="form-row-inline">
+      <div class="form-group">
+        <label for="acudiente-direccion" required>Dirección:</label>
+        <input type="text" id="acudiente-direccion" name="acudiente-direccion" required>
+      </div>
+      <div class="form-group">
+        <label for="acudiente-ciudad" required>Ciudad:</label>
+        <input type="text" id="acudiente-ciudad" name="acudiente-ciudad" required>
+      </div>
+    </div>
+
+    <!-- Tipo Documento y Número Documento -->
+    <div class="form-row-inline">
+      <div class="form-group">
+        <label for="acudiente-tipo-documento" required>Tipo de Documento:</label>
+        <select id="acudiente-tipo-documento" name="acudiente-tipo-documento" required>
+          <option value="">Seleccione</option>
+          <option value="CC">Cédula de Ciudadanía</option>
+          <option value="CE">Cédula de Extranjería</option>
+          <option value="TI">Tarjeta de Identidad</option>
+          <option value="RC">Registro Civil</option>
+          <option value="PAS">Pasaporte</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="acudiente-numero-documento" required>Número de Documento:</label>
+        <input type="text" id="acudiente-numero-documento" name="acudiente-numero-documento" required>
+      </div>
+    </div>
+
+    <!-- Lugar Expedición y Fecha Nacimiento -->
+    <div class="form-row-inline">
+      <div class="form-group">
+        <label for="acudiente-lugar-expedicion" required>Lugar de Expedición:</label>
+        <input type="text" id="acudiente-lugar-expedicion" name="acudiente-lugar-expedicion" required>
+      </div>
+      <div class="form-group">
+        <label for="acudiente-fecha-nacimiento" required>Fecha de Nacimiento:</label>
+        <input type="date" id="acudiente-fecha-nacimiento" name="acudiente-fecha-nacimiento" required>
+      </div>
+    </div>
+
+    <!-- Lugar Nacimiento y Género -->
+    <div class="form-row-inline">
+      <div class="form-group">
+        <label for="acudiente-lugar-nacimiento" required>Lugar de Nacimiento:</label>
+        <input type="text" id="acudiente-lugar-nacimiento" name="acudiente-lugar-nacimiento" required>
+      </div>
+      <div class="form-group">
+        <label for="acudiente-genero" required>Género:</label>
+        <select id="acudiente-genero" name="acudiente-genero" required>
+          <option value="">Seleccione</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Otro">Otro</option>
+          <option value="Prefiero no decir">Prefiero no decir</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Correo electrónico -->
+    <div class="form-row">
+      <label for="acudiente-correo" required>Correo electrónico:</label>
+      <input type="email" id="acudiente-correo" name="acudiente-correo" required placeholder="Escribir en minúscula">
+    </div>
+
+    <!-- Nivel Estudios y Ocupación -->
+    <div class="form-row-inline">
+      <div class="form-group">
+        <label for="acudiente-nivel-estudios" required>Nivel de Estudios:</label>
+        <select id="acudiente-nivel-estudios" name="acudiente-nivel-estudios" required>
+          <option value="">Seleccione</option>
+          <option value="Primaria">Primaria</option>
+          <option value="Bachillerato">Bachillerato</option>
+          <option value="Técnico">Técnico</option>
+          <option value="Tecnólogo">Tecnólogo</option>
+          <option value="Pregrado">Pregrado</option>
+          <option value="Especialización">Especialización</option>
+          <option value="Maestría">Maestría</option>
+          <option value="Doctorado">Doctorado</option>
+          <option value="Ninguno">Ninguno</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="acudiente-ocupacion" required>Ocupación / Profesión:</label>
+        <input type="text" id="acudiente-ocupacion" name="acudiente-ocupacion" required>
+      </div>
+    </div>
+
+    <!-- Preguntas Sí/No -->
+    <div class="form-row-inline">
+      <div class="form-group">
+        <label for="acudiente-acudiente" required>Será el acudiente en el colegio?:</label>
+        <select id="acudiente-acudiente" name="acudiente-acudiente" required>
+          <option value="">Seleccione</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="acudiente-reuniones" required>Asiste a Reuniones:</label>
+        <select id="acudiente-reuniones" name="acudiente-reuniones" required>
+          <option value="">Seleccione</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Convive con el estudiante -->
+    <div class="form-row">
+      <label for="acudiente-convive" required>Convive con el estudiante:</label>
+      <select id="acudiente-convive" name="acudiente-convive" required>
+        <option value="">Seleccione</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+
+    <button type="submit" class="save-btn">Guardar Información</button>
+  </form>
+</section>
+  <!-- ======== DATOS DE LA VIVIENDA ======== -->
+<section id="datos-vivienda" class="content" style="display: none;">
+  <h2>Datos de la Vivienda</h2>
+
+  <form id="form-datos-vivienda" class="info-general-form">
+    
+    <!-- Número de personas en el hogar -->
+    <div class="form-row">
+      <label for="numero-personas" required>Número de personas que viven en su hogar:</label>
+      <input type="number" id="numero-personas" name="numero-personas" min="1" max="20" required>
+    </div>
+
+    <!-- Tipo de vivienda -->
+    <div class="form-row">
+      <label for="tipo-vivienda" required>¿La vivienda donde habita la familia es?</label>
+      <select id="tipo-vivienda" name="tipo-vivienda" required>
+        <option value="">Seleccione</option>
+        <option value="propia">Propia</option>
+        <option value="familiar">Familiar</option>
+        <option value="arriendo">En arriendo</option>
+        <option value="comodato">En comodato</option>
+      </select>
+    </div>
+
+    <!-- Servicios básicos - Primera fila -->
+    <div class="form-row-inline">
+      <div class="form-group">
+        <label for="servicio-energia" required>¿Su vivienda cuenta con servicios básicos de Energía?</label>
+        <select id="servicio-energia" name="servicio-energia" required>
+          <option value="">Seleccione</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="servicio-agua" required>¿Su vivienda cuenta con servicios básicos de Agua?&nbsp&nbsp</label>
+        <select id="servicio-agua" name="servicio-agua" required>
+          <option value="">Seleccione</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Servicios básicos - Segunda fila -->
+    <div class="form-row-inline">
+      <div class="form-group">
+        <label for="servicio-alcantarillado" required>¿Su vivienda cuenta con servicios básicos de Alcantarillado?</label>
+        <select id="servicio-alcantarillado" name="servicio-alcantarillado" required>
+          <option value="">Seleccione</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="servicio-gas" required>¿Su vivienda cuenta con servicios básicos de Gas Domiciliario?</label>
+        <select id="servicio-gas" name="servicio-gas" required>
+          <option value="">Seleccione</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Servicios básicos - Tercera fila -->
+    <div class="form-row-inline">
+      <div class="form-group">
+        <label for="servicio-telefono" required>¿Su vivienda cuenta con servicios básicos de Teléfono?</label>
+        <select id="servicio-telefono" name="servicio-telefono" required>
+          <option value="">Seleccione</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="servicio-internet" required>¿Su vivienda cuenta con servicios básicos de Internet?</label>
+        <select id="servicio-internet" name="servicio-internet" required>
+          <option value="">Seleccione</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="submit" class="save-btn">Guardar Información</button>
+  </form>
+</section>
+
+<!-- ======== INFORMACIÓN DE SALUD ======== -->
+<section id="informacion-salud" class="content" style="display: none;">
+  <h2>Información de Salud del Estudiante</h2>
+
+  <form id="form-informacion-salud" class="info-general-form">
+    
+    <!-- Tratamiento médico actual -->
+    <div class="form-row">
+      <label for="tratamiento-medico" required>¿Se encuentra actualmente en tratamiento médico?</label>
+      <select id="tratamiento-medico" name="tratamiento-medico" required>
+        <option value="">Seleccione</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+
+    <!-- Alergias a medicamentos -->
+    <div class="form-row">
+      <label for="alergia-medicamentos" required>¿Es alérgico(a) a algún medicamento?</label>
+      <select id="alergia-medicamentos" name="alergia-medicamentos" required>
+        <option value="">Seleccione</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+
+    <!-- Especificar alergias (se muestra solo si respuesta es Sí) -->
+    <div id="alergia-especificar-div" style="display: none;">
+      <div class="form-row">
+        <label for="alergia-especificar" required>Si su respuesta es "Sí", por favor especifique:</label>
+        <textarea id="alergia-especificar" name="alergia-especificar" rows="3" placeholder="Especifique a qué medicamentos es alérgico..."></textarea>
+      </div>
+    </div>
+
+    <!-- Enfermedades diagnosticadas -->
+    <div class="form-row">
+      <label for="enfermedad-diagnosticada" required>¿Padece alguna enfermedad diagnosticada?</label>
+      <select id="enfermedad-diagnosticada" name="enfermedad-diagnosticada" required>
+        <option value="">Seleccione</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+    </div>
+
+    <!-- Especificar enfermedades (se muestra solo si respuesta es Sí) -->
+    <div id="enfermedad-especificar-div" style="display: none;">
+      <div class="form-row">
+        <label for="enfermedad-especificar" required>Si su respuesta es "Sí", indique cuál o cuáles:</label>
+        <textarea id="enfermedad-especificar" name="enfermedad-especificar" rows="3" placeholder="Especifique las enfermedades diagnosticadas..."></textarea>
+      </div>
+    </div>
+
+    <!-- Peso y Estatura -->
+    <div class="form-row-inline">
+      <div class="form-group">
+        <label for="peso" required>Peso:</label>
+        <input type="number" id="peso" name="peso" min="10" max="200" step="0.1" required placeholder="kg">
+      </div>
+      <div class="form-group">
+        <label for="estatura" required>Estatura:</label>
+        <input type="number" id="estatura" name="estatura" min="50" max="250" step="0.1" required placeholder="cm">
+      </div>
+    </div>
+
+    <!-- Observaciones adicionales -->
+    <div class="form-row">
+      <label for="observaciones-fisicas">Observaciones adicionales sobre el estado físico:</label>
+      <textarea id="observaciones-fisicas" name="observaciones-fisicas" rows="3" placeholder="Observaciones sobre condición física..."></textarea>
+    </div>
+
+    <!-- Medicamentos de uso permanente -->
+    <div class="form-row">
+      <label for="medicamentos-permanentes">Medicamentos de uso permanente:</label>
+      <textarea id="medicamentos-permanentes" name="medicamentos-permanentes" rows="3" placeholder="Lista de medicamentos de uso regular..."></textarea>
+    </div>
+
+    <!-- Información adicional de salud -->
+    <div class="form-row">
+      <label for="informacion-salud-adicional">Enfermedades, alergias u otros aspectos de salud que deban tenerse en cuenta:</label>
+      <textarea id="informacion-salud-adicional" name="informacion-salud-adicional" rows="4" placeholder="Información adicional importante sobre la salud del estudiante..."></textarea>
+    </div>
+
+    <button type="submit" class="save-btn">Guardar Información</button>
+  </form>
+</section>
+
+<!-- ======== LINK Y DOCUMENTOS ======== -->
+<section id="link-documentos" class="content" style="display: none;">
+  <h2>Link y Documentos a Diligenciar</h2>
+
+  <div class="info-general-form">
+    
+    <!-- Información principal -->
+    <div class="form-row">
+      <p><strong>Por favor:</strong></p>
+    </div>
+
+    <!-- Paso 1: Formulario en línea -->
+    <div class="form-row">
+      <div class="paso-item">
+        <h3>1. Diligencie el formulario en línea</h3>
+        <p>Ingrese al siguiente enlace usando el número de identificación del estudiante:</p>
+        <div class="link-container">
+          <a href="https://formularios.educacionbogota.edu.co/index.php/121449?lang=es" target="_blank" class="document-link">
+            🔗 https://formularios.educacionbogota.edu.co/index.php/121449?lang=es
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paso 2: Descargar documentos -->
+    <div class="form-row">
+      <div class="paso-item">
+        <h3>2. Descargue los siguientes documentos:</h3>
+        
+        <div class="documentos-lista">
+          <div class="documento-item">
+            <span class="documento-icon">📄</span>
+            <span class="documento-nombre">FORMULARIO SIMPADE 2026</span>
+            <button type="button" class="descargar-btn">Descargar</button>
+          </div>
+          
+          <div class="documento-item">
+            <span class="documento-icon">📄</span>
+            <span class="documento-nombre">FORMATO DE USO DE IMAGEN 2026 MCM</span>
+            <button type="button" class="descargar-btn">Descargar</button>
+          </div>
+          
+          <div class="documento-item">
+            <span class="documento-icon">📄</span>
+            <span class="documento-nombre">ACTA DE ACUERDOS Y COMPROMISOS</span>
+            <button type="button" class="descargar-btn">Descargar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paso 3: Diligenciar y firmar -->
+    <div class="form-row">
+      <div class="paso-item">
+        <h3>3. Diligencie y firme cada uno de los formularios</h3>
+        <p>Una vez descargados, complete toda la información requerida y firme los documentos.</p>
+      </div>
+    </div>
+
+    <!-- Paso 4: Adjuntar documentos -->
+    <div class="form-row">
+      <div class="paso-item">
+        <h3>4. Adjunte los documentos firmados</h3>
+        <p>En la siguiente pestaña de la plataforma, cargue los documentos firmados en formato PDF.</p>
+        <div class="aviso-importante">
+          <strong>⚠️ Importante:</strong> Todos los documentos deben estar en formato PDF y debidamente firmados.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======== ADJUNTAR DOCUMENTOS ======== -->
+<section id="adjuntar-documentos" class="content" style="display: none;">
+  <h2>Adjuntar Documentos</h2>
+
+  <div class="info-general-form">
+    
+    <!-- Información importante -->
+    <div class="form-row">
+  <div class="aviso-importante">
+    <strong>📋 INFORMACIÓN IMPORTANTE:</strong> 
+    Los campos marcados con <span style="color: orange;">●</span> son <strong>OBLIGATORIOS</strong>.
+    Los campos marcados con <span style="color: #0078d7;">○</span> son <strong>OPCIONALES</strong>.
+  </div>
+</div>
+
+    <form id="form-adjuntar-documentos">
+      
+      <!-- Documentos obligatorios -->
+      <div class="documentos-seccion">
+        <h3>📄 Documentos Obligatorios</h3>
+        
+        <!-- 1. Registro civil -->
+        <div class="documento-adjunto obligatorio">
+          <label for="registro-civil">1. Fotocopia del registro civil del estudiante</label>
+          <input type="file" id="registro-civil" name="registro-civil" accept=".pdf" required>
+          <span class="requerido">● Obligatorio</span>
+        </div>
+
+        <!-- 2. Tarjeta de identidad - OPCIONAL -->
+<div class="documento-adjunto opcional">
+  <label for="tarjeta-identidad">2. Fotocopia de la tarjeta de identidad (para estudiantes mayores de 7 años)</label>
+  <input type="file" id="tarjeta-identidad" name="tarjeta-identidad" accept=".pdf">
+  <span class="opcional-text">○ Opcional</span>
+</div>
+
+<!-- 3. Estudiantes extranjeros - OPCIONAL -->
+<div class="documento-adjunto opcional">
+  <label for="documento-extranjero">3. Para estudiantes extranjeros:</label>
+  <div class="sub-documentos">
+    <div class="sub-documento">
+      <label for="ppt"><strong>Migrantes de Venezuela:</strong> fotocopia del Permiso de Protección Temporal (PPT)</label>
+      <input type="file" id="ppt" name="ppt" accept=".pdf">
+    </div>
+    <div class="sub-documento">
+      <label for="visa-menor"><strong>Extranjeros menores de 7 años:</strong> fotocopia de la Visa</label>
+      <input type="file" id="visa-menor" name="visa-menor" accept=".pdf">
+    </div>
+    <div class="sub-documento">
+      <label for="visa-mayor"><strong>Extranjeros mayores de 7 años:</strong> fotocopia de la Visa y cédula de extranjería</label>
+      <input type="file" id="visa-mayor" name="visa-mayor" accept=".pdf">
+    </div>
+  </div>
+  <span class="opcional-text">○ Opcional</span>
+</div>
+
+<!-- 7. Cédula acudiente - OPCIONAL -->
+<div class="documento-adjunto opcional">
+  <label for="cedula-acudiente">7. Fotocopia de la cédula del acudiente, solo en caso de que sea una persona diferente al padre o a la madre</label>
+  <input type="file" id="cedula-acudiente" name="cedula-acudiente" accept=".pdf">
+  <span class="opcional-text">○ Opcional</span>
+</div>
+
+        <!-- 8. Recibo público -->
+        <div class="documento-adjunto obligatorio">
+          <label for="recibo-publico">8. Fotocopia del recibo público</label>
+          <input type="file" id="recibo-publico" name="recibo-publico" accept=".pdf" required>
+          <span class="requerido">● Obligatorio</span>
+        </div>
+
+        <!-- 9. EPS -->
+        <div class="documento-adjunto obligatorio">
+          <label for="certificado-eps">9. Fotocopia del certificado de afiliación a la EPS 
+            <small>(puede descargarlo en: <a href="https://www.adres.gov.co/consulte-su-eps" target="_blank">https://www.adres.gov.co/consulte-su-eps</a>)</small>
+          </label>
+          <input type="file" id="certificado-eps" name="certificado-eps" accept=".pdf" required>
+          <span class="requerido">● Obligatorio</span>
+        </div>
+
+        <!-- 10. Foto -->
+        <div class="documento-adjunto obligatorio">
+          <label for="foto-estudiante">10. Una foto reciente, tamaño 3x4</label>
+          <input type="file" id="foto-estudiante" name="foto-estudiante" accept=".pdf,.jpg,.jpeg,.png" required>
+          <span class="requerido">● Obligatorio</span>
+        </div>
+
+        <!-- 11. Certificados escolaridad -->
+        <div class="documento-adjunto obligatorio">
+          <label for="certificados-escolaridad">11. Certificados de escolaridad de los grados anteriores al solicitado
+            <small>Los certificados deben ser adjuntados en un solo archivo PDF</small>
+          </label>
+          <input type="file" id="certificados-escolaridad" name="certificados-escolaridad" accept=".pdf" required>
+          <span class="requerido">● Obligatorio</span>
+        </div>
+
+      </div>
+
+      <!-- Documentos del sistema -->
+      <div class="documentos-seccion">
+        <h3>📋 Documentos del Sistema</h3>
+        
+        <!-- 12. SIMPADE -->
+        <div class="documento-adjunto obligatorio">
+          <label for="formulario-simpade">12. FORMULARIO SIMPADE 2026</label>
+          <input type="file" id="formulario-simpade" name="formulario-simpade" accept=".pdf" required>
+          <span class="requerido">● Obligatorio</span>
+        </div>
+
+        <!-- 13. Uso de imagen -->
+        <div class="documento-adjunto obligatorio">
+          <label for="formato-imagen">13. FORMATO DE USO DE IMAGEN 2026</label>
+          <input type="file" id="formato-imagen" name="formato-imagen" accept=".pdf" required>
+          <span class="requerido">● Obligatorio</span>
+        </div>
+
+        <!-- 14. Acuerdos -->
+        <div class="documento-adjunto obligatorio">
+          <label for="acta-acuerdos">14. ACTA DE ACUERDOS Y COMPROMISOS</label>
+          <input type="file" id="acta-acuerdos" name="acta-acuerdos" accept=".pdf" required>
+          <span class="requerido">● Obligatorio</span>
+        </div>
+      </div>
+
+      <!-- Información adicional -->
+      <div class="form-row">
+        <div class="aviso-informativo">
+          <strong>💡 Nota:</strong> Los documentos 12, 13 y 14 serán enviados por WhatsApp (FORMULARIO SIMPADE 2026, FORMATO DE USO DE IMAGEN 2026, ACTA DE ACUERDOS Y COMPROMISOS)
+        </div>
+      </div>
+
+      <button type="submit" class="save-btn">Enviar Documentos</button>
+    </form>
+  </div>
+</section>
   </div>
   
 
