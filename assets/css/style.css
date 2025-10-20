@@ -1,6 +1,6 @@
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(to bottom, rgb(92, 11, 4), rgb(4, 37, 92));
+  background: linear-gradient(to bottom, rgb(92, 11, 4) 50%, rgb(4, 37, 92) 50%);
   display: flex;
   justify-content: center;
   align-items: center;

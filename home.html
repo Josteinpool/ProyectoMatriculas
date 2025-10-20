@@ -1,1326 +1,1961 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sistema de Matrículas - Información Importante</title>
-  <link rel="stylesheet" href="assets/css/home.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Matrículas - Información Importante</title>
+    <link rel="stylesheet" href="assets/css/home.css" />
+  </head>
+  <body>
+    <div class="home-container">
+      <nav class="tabs">
+        <button class="tab active">Información Importante</button>
+        <button class="tab">Información Personal</button>
+        <button class="tab">Información General</button>
+        <button class="tab">Datos de la Madre</button>
+        <button class="tab">Datos del Padre</button>
+        <button class="tab">Otro Acudiente</button>
+        <button class="tab">Datos de la Vivienda</button>
+        <button class="tab">Información de Salud</button>
+        <button class="tab">Link y Documentos</button>
+        <button class="tab">Adjuntar Documentos</button>
+      </nav>
 
-  <div class="home-container">
-    <nav class="tabs">
-      <button class="tab active">Información Importante</button>
-      <button class="tab">Información Personal</button>
-      <button class="tab">Información General</button>
-      <button class="tab">Datos de la Madre</button>
-      <button class="tab">Datos del Padre</button>
-      <button class="tab">Otro Acudiente</button>
-      <button class="tab">Datos de la Vivienda</button>
-      <button class="tab">Información de Salud</button>
-      <button class="tab">Link y Documentos</button>
-      <button class="tab">Adjuntar Documentos</button>
-    </nav>
+      <section class="content active">
+        <h2>Información Importante</h2>
+        <ul>
+          <li>
+            Los campos señalados con un
+            <strong style="color: red">asterisco rojo (*)</strong> son de
+            carácter obligatorio.
+          </li>
+          <li>
+            En caso de que el <strong>padre o la madre</strong> haya fallecido,
+            por favor escriba <strong>“NO APLICA”</strong> en los campos de
+            texto y relacione <strong>99</strong> en los campos numéricos
+            correspondientes.
+          </li>
+          <li>
+            Recuerde registrar un
+            <strong>correo electrónico válido</strong> tanto del padre como de
+            la madre. Estos deben ser <strong>diferentes</strong>.
+          </li>
+          <li>
+            El sistema <strong>no permitirá avanzar</strong> si no se
+            diligencian todos los campos obligatorios.
+          </li>
+        </ul>
+      </section>
+      <!-- ======== INFORMACIÓN PERSONAL ======== -->
+      <section id="info-personal" class="content" style="display: none">
+        <h2>Información Personal del Estudiante</h2>
 
-    <section class="content active">
-      <h2>Información Importante</h2>
-      <ul>
-        <li>Los campos señalados con un <strong style="color: red;">asterisco rojo (*)</strong> son de carácter obligatorio.</li>
-        <li>En caso de que el <strong>padre o la madre</strong> haya fallecido, por favor escriba <strong>“NO APLICA”</strong> en los campos de texto y relacione <strong>99</strong> en los campos numéricos correspondientes.</li>
-        <li>Recuerde registrar un <strong>correo electrónico válido</strong> tanto del padre como de la madre. Estos deben ser <strong>diferentes</strong>.</li>
-        <li>El sistema <strong>no permitirá avanzar</strong> si no se diligencian todos los campos obligatorios.</li>
-      </ul>
-    </section>
-    <!-- ======== INFORMACIÓN PERSONAL ======== -->
-<section id="info-personal" class="content" style="display: none;">
-  <h2>Información Personal del Estudiante</h2>
+        <form id="formInfoPersonal" class="info-form">
+          <!-- Fila 1: Nombres y Apellidos -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="nombres" required>Nombres:</label>
+              <input type="text" id="nombres" name="nombres" required />
+            </div>
+            <div class="form-group">
+              <label for="apellidos" required>Apellidos:</label>
+              <input type="text" id="apellidos" name="apellidos" required />
+            </div>
+          </div>
 
-  <form id="formInfoPersonal" class="info-form">
-    
-    <!-- Fila 1: Nombres y Apellidos -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="nombres" required>Nombres:</label>
-        <input type="text" id="nombres" name="nombres" required>
-      </div>
-      <div class="form-group">
-        <label for="apellidos" required>Apellidos:</label>
-        <input type="text" id="apellidos" name="apellidos" required>
-      </div>
-    </div>
+          <!-- Fila 2: Grado a Matricular y Grado Actual -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="gradoMatricular" required>Grado a Matricular:</label>
+              <input
+                type="text"
+                id="gradoMatricular"
+                name="gradoMatricular"
+                placeholder="Se asignará automáticamente"
+                readonly
+              />
+            </div>
+            <div class="form-group">
+              <label for="gradoActual" required
+                >Grado que Cursa Actualmente:</label
+              >
+              <input
+                type="text"
+                id="gradoActual"
+                name="gradoActual"
+                placeholder="Se completará automáticamente"
+                readonly
+              />
+            </div>
+          </div>
 
-    <!-- Fila 2: Grado a Matricular y Grado Actual -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="gradoMatricular" required>Grado a Matricular:</label>
-        <input type="text" id="gradoMatricular" name="gradoMatricular" placeholder="Se asignará automáticamente" readonly>
-      </div>
-      <div class="form-group">
-        <label for="gradoActual" required>Grado que Cursa Actualmente:</label>
-        <input type="text" id="gradoActual" name="gradoActual" placeholder="Se completará automáticamente" readonly>
-      </div>
-    </div>
+          <!-- Fila 3: Sede y Tipo Estudiante -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="sede">Sede:</label>
+              <input type="text" id="sede" name="sede" value="ÚNICA" readonly />
+            </div>
+            <div class="form-group">
+              <label for="tipoEstudiante" required
+                >Estudiante Nuevo o Antiguo:</label
+              >
+              <select id="tipoEstudiante" name="tipoEstudiante" required>
+                <option value="Antiguo" selected>Antiguo</option>
+                <option value="Nuevo">Nuevo</option>
+              </select>
+            </div>
+          </div>
 
-    <!-- Fila 3: Sede y Tipo Estudiante -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="sede">Sede:</label>
-        <input type="text" id="sede" name="sede" value="ÚNICA" readonly>
-      </div>
-      <div class="form-group">
-        <label for="tipoEstudiante" required>Estudiante Nuevo o Antiguo:</label>
-        <select id="tipoEstudiante" name="tipoEstudiante" required>
-          <option value="Antiguo" selected>Antiguo</option>
-          <option value="Nuevo">Nuevo</option>
-        </select>
-      </div>
-    </div>
+          <!-- Fila 4: Fecha Nacimiento y Lugar Nacimiento -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="fechaNacimiento" required>Fecha de Nacimiento:</label>
+              <input
+                type="date"
+                id="fechaNacimiento"
+                name="fechaNacimiento"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="lugarNacimiento" required>Lugar de Nacimiento:</label>
+              <input
+                type="text"
+                id="lugarNacimiento"
+                name="lugarNacimiento"
+                required
+              />
+            </div>
+          </div>
 
-    <!-- Fila 4: Fecha Nacimiento y Lugar Nacimiento -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="fechaNacimiento" required>Fecha de Nacimiento:</label>
-        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
-      </div>
-      <div class="form-group">
-        <label for="lugarNacimiento" required>Lugar de Nacimiento:</label>
-        <input type="text" id="lugarNacimiento" name="lugarNacimiento" required>
-      </div>
-    </div>
+          <!-- Fila 5: Edad y Tipo Sangre -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="edad" required>Edad:</label>
+              <input
+                type="number"
+                id="edad"
+                name="edad"
+                min="1"
+                max="25"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="tipoSangre" required>Tipo de Sangre:</label>
+              <select id="tipoSangre" name="tipoSangre" required>
+                <option value="">Seleccione</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+              </select>
+            </div>
+          </div>
 
-    <!-- Fila 5: Edad y Tipo Sangre -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="edad" required>Edad:</label>
-        <input type="number" id="edad" name="edad" min="1" max="25" required>
-      </div>
-      <div class="form-group">
-        <label for="tipoSangre" required>Tipo de Sangre:</label>
-        <select id="tipoSangre" name="tipoSangre" required>
-          <option value="">Seleccione</option>
-          <option value="O+">O+</option>
-          <option value="O-">O-</option>
-          <option value="A+">A+</option>
-          <option value="A-">A-</option>
-          <option value="B+">B+</option>
-          <option value="B-">B-</option>
-          <option value="AB+">AB+</option>
-          <option value="AB-">AB-</option>
-        </select>
-      </div>
-    </div>
+          <!-- Fila 6: Número Documento y Lugar Expedición -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="numeroDocumento" required>Número de Documento:</label>
+              <input
+                type="text"
+                id="numeroDocumento"
+                name="numeroDocumento"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="lugarExpedicion" required>Lugar de Expedición:</label>
+              <input
+                type="text"
+                id="lugarExpedicion"
+                name="lugarExpedicion"
+                required
+              />
+            </div>
+          </div>
 
-    <!-- Fila 6: Número Documento y Lugar Expedición -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="numeroDocumento" required>Número de Documento:</label>
-        <input type="text" id="numeroDocumento" name="numeroDocumento" required>
-      </div>
-      <div class="form-group">
-        <label for="lugarExpedicion" required>Lugar de Expedición:</label>
-        <input type="text" id="lugarExpedicion" name="lugarExpedicion" required>
-      </div>
-    </div>
+          <!-- Fila 7: Tipo Documento y Género -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="tipoDocumento" required>Tipo de Documento:</label>
+              <select id="tipoDocumento" name="tipoDocumento" required>
+                <option value="">Seleccione</option>
+                <option value="TI">Tarjeta de Identidad</option>
+                <option value="RC">Registro Civil</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="genero" required>Género:</label>
+              <select id="genero" name="genero" required>
+                <option value="">Seleccione</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+          </div>
 
-    <!-- Fila 7: Tipo Documento y Género -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="tipoDocumento" required>Tipo de Documento:</label>
-        <select id="tipoDocumento" name="tipoDocumento" required>
-          <option value="">Seleccione</option>
-          <option value="TI">Tarjeta de Identidad</option>
-          <option value="RC">Registro Civil</option>
-          <option value="CC">Cédula de Ciudadanía</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="genero" required>Género:</label>
-        <select id="genero" name="genero" required>
-          <option value="">Seleccione</option>
-          <option value="Masculino">Masculino</option>
-          <option value="Femenino">Femenino</option>
-          <option value="Otro">Otro</option>
-        </select>
-      </div>
-    </div>
+          <!-- Fila 8: Celular y Teléfono Residencia -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="celular" required>Celular del Estudiante:</label>
+              <input
+                type="tel"
+                id="celular"
+                name="celular"
+                maxlength="10"
+                pattern="[0-9]{10}"
+                title="Ingrese un número de 10 dígitos"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="telefonoResidencia" required
+                >Teléfono Residencia:</label
+              >
+              <input
+                type="tel"
+                id="telefonoResidencia"
+                name="telefonoResidencia"
+                maxlength="10"
+                pattern="[0-9]{7,10}"
+                required
+              />
+            </div>
+          </div>
 
-    <!-- Fila 8: Celular y Teléfono Residencia -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="celular" required>Celular del Estudiante:</label>
-        <input type="tel" id="celular" name="celular" maxlength="10" pattern="[0-9]{10}" title="Ingrese un número de 10 dígitos" required>
-      </div>
-      <div class="form-group">
-        <label for="telefonoResidencia" required>Teléfono Residencia:</label>
-        <input type="tel" id="telefonoResidencia" name="telefonoResidencia" maxlength="10" pattern="[0-9]{7,10}" required>
-      </div>
-    </div>
+          <!-- Fila 9: Correo Institucional y Fecha Matrícula -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="correoInstitucional">Correo Institucional:</label>
+              <input
+                type="email"
+                id="correoInstitucional"
+                name="correoInstitucional"
+                placeholder="Asignado automáticamente"
+                readonly
+              />
+            </div>
+            <div class="form-group">
+              <label for="fechaMatricula" required>Fecha de Matrícula:</label>
+              <input
+                type="date"
+                id="fechaMatricula"
+                name="fechaMatricula"
+                required
+              />
+            </div>
+          </div>
 
-    <!-- Fila 9: Correo Institucional y Fecha Matrícula -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="correoInstitucional">Correo Institucional:</label>
-        <input type="email" id="correoInstitucional" name="correoInstitucional" placeholder="Asignado automáticamente" readonly>
-      </div>
-      <div class="form-group">
-        <label for="fechaMatricula" required>Fecha de Matrícula:</label>
-        <input type="date" id="fechaMatricula" name="fechaMatricula" required>
-      </div>
-    </div>
-
-    <button type="submit" class="save-btn">Guardar Información</button>
-  </form>
-</section>
+          <button type="submit" class="save-btn">Guardar Información</button>
+        </form>
+      </section>
       <!-- ======== INFORMACIÓN GENERAL ======== -->
-<section id="info-general" class="content" style="display: none;">
-  <h2>Información General</h2>
-
-  <form id="form-info-general" class="info-general-form">
-    
-    <!-- Dirección y Barrio -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="direccion" required>Dirección:</label>
-        <input type="text" id="direccion" name="direccion" required>
-      </div>
-      <div class="form-group">
-        <label for="barrio" required>Barrio:</label>
-        <input type="text" id="barrio" name="barrio" required>
-      </div>
-    </div>
-
-    <!-- Madre cabeza de familia y Estrato -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="madre-cabeza" required>Alumno Madre Cabeza de Familia:</label>
-        <select id="madre-cabeza" name="madre-cabeza" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="estrato" required>Estrato:</label>
-        <select id="estrato" name="estrato" required>
-          <option value="">Seleccione</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Municipio -->
-    <div class="form-row">
-      <label for="municipio" required>Municipio:</label>
-      <input type="text" id="municipio" name="municipio" required>
-    </div>
-
-    <!-- Historial Académico -->
-    <div class="form-row">
-      <p><strong>Historial Académico Año 2024:</strong><br>
-      (Por favor diligenciar todos los espacios: Para Primaria desde grado Jardín y para Bachillerato desde grado 5°)</p>
-
-      <table border="1" cellpadding="8" cellspacing="0">
-        <thead style="background:#f1f1f1;">
-          <tr>
-            <th>Año</th>
-            <th>Colegio</th>
-            <th>Ciudad</th>
-            <th>Grado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="text" placeholder="2025" required></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="2024" required></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="2023" required></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="2022" required></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="2021" required></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="2020" required></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="2019" required></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-            <td><input type="text"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Sisben y EPS -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="sisben" required>Sisben:</label>
-        <select id="sisben" name="sisben" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="eps" required>IPS/EPS:</label>
-        <input type="text" id="eps" name="eps" required>
-      </div>
-    </div>
-
-    <!-- Etnia y Desplazado -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="etnia" required>Etnia:</label>
-        <select id="etnia" name="etnia">
-          <option value="">Seleccione</option>
-          <option value="NINGUNA">NINGUNA</option>
-          <option value="AFRODESCENDIENTE">AFRODESCENDIENTE</option>
-          <option value="ACHAGUA">ACHAGUA</option>
-          <option value="AMBALO">AMBALO</option>
-          <option value="AMORUA">AMORUA</option>
-          <option value="ARHUACO">ARHUACO</option>
-          <option value="AWA">AWA</option>
-          <option value="BANIVA">BANIVA</option>
-          <option value="BARA">BARA</option>
-          <option value="BARASANO">BARASANO</option>
-          <option value="BARI">BARI</option>
-          <option value="BETOYE">BETOYE (GUAHIBO)</option>
-          <option value="BORA">BORA</option>
-          <option value="CAMENTSA">CAMENTSA (KAMSA - KAMENTSA)</option>
-          <option value="CHIMILAS">CHIMILAS</option>
-          <option value="CHIRICOA">CHIRICOA</option>
-          <option value="COREGUAJE">COREGUAJE</option>
-          <option value="COCAMA">COCAMA</option>
-          <option value="CUNA">CUNA</option>
-          <option value="DESANO">DESANO</option>
-          <option value="EMBERA CHAMI">EMBERA CHAMI</option>
-          <option value="EMBERA KATIO">EMBERA KATIO</option>
-          <option value="GUAMBIANO">GUAMBIANO</option>
-          <option value="INGA">INGA</option>
-          <option value="KOGUI">KOGUI</option>
-          <option value="MUISCA">MUISCA</option>
-          <option value="NEGRITUDES">NEGRITUDES</option>
-          <option value="NUKAK">NUKAK MAKU</option>
-          <option value="PAEZ">PAEZ (NASA)</option>
-          <option value="PIJAO">PIJAO</option>
-          <option value="PUINAVE">PUINAVE</option>
-          <option value="RAIZAL">RAIZAL</option>
-          <option value="WAYUU">WAYUU</option>
-          <option value="YANACONA">YANACONA</option>
-          <option value="ZENU">ZENU (SENU)</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="desplazado" required>Desplazado:</label>
-        <select id="desplazado" name="desplazado">
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Discapacidad -->
-    <div class="form-row">
-      <label for="discapacidad-diagnostico" required>Discapacidad Diagnosticada:</label>
-      <select id="discapacidad-diagnostico" name="discapacidad-diagnostico">
-        <option value="">Seleccione</option>
-        <option value="si">Sí</option>
-        <option value="no">No</option>
-      </select>
-    </div>
-
-    <div id="discapacidad-div" style="display: none;">
-      <div class="form-row-inline">
-        <div class="form-group">
-          <label for="discapacidad" required>Tipo de Discapacidad:</label>
-          <select id="discapacidad" name="discapacidad">
-            <option value="">Seleccione</option>
-            <option value="fisica">DISCAPACIDAD FÍSICA</option>
-            <option value="auditiva">DISCAPACIDAD AUDITIVA</option>
-            <option value="visual">DISCAPACIDAD VISUAL</option>
-            <option value="sordoceguera">SORDOCEGUERA</option>
-            <option value="intelectual">DISCAPACIDAD INTELECTUAL</option>
-            <option value="psicosocial">DISCAPACIDAD PSICOSOCIAL (MENTAL)</option>
-            <option value="multiple">DISCAPACIDAD MÚLTIPLE</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="certificado" required>Adjuntar Certificado:</label>
-          <input type="file" id="certificado" name="certificado">
-        </div>
-      </div>
-    </div>
-
-    <!-- Hermanos -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="hermanos" required>Número de Hermanos:</label>
-        <input type="number" id="hermanos" name="hermanos">
-      </div>
-      <div class="form-group">
-        <label for="lugar-hermanos" required>Lugar que ocupa entre ellos:</label>
-        <input type="number" id="lugar-hermanos" name="lugar-hermanos">
-      </div>
-      <div class="form-group">
-        <label for="hermanos-colegio" required>¿Tiene hermanos en el colegio?:</label>
-        <select id="hermanos-colegio" name="hermanos-colegio">
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Lateralidad -->
-    <div class="form-row">
-      <label for="lateralidad" required>Lateralidad del estudiante:</label>
-      <select id="lateralidad" name="lateralidad">
-        <option value="">Seleccione</option>
-        <option value="zurdo">Zurdo</option>
-        <option value="diestro">Diestro</option>
-        <option value="ambidiestro">Ambidiestro</option>
-      </select>
-    </div>
-
-    <hr>
-
-    <!-- Información del acudiente -->
-    <div class="form-row">
-      <p><strong>Información del acudiente responsable:</strong></p>
-    </div>
-
-    <!-- Nombre y Documento -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="acudiente-nombre" required>Nombre del acudiente:</label>
-        <input type="text" id="acudiente-nombre" name="acudiente-nombre" required>
-      </div>
-      <div class="form-group">
-        <label for="acudiente-doc" required>Número de documento:</label>
-        <input type="number" id="acudiente-doc" name="acudiente-doc" required>
-      </div>
-    </div>
-
-    <!-- Parentesco y Teléfono -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="acudiente-parentesco" required>Parentesco con el estudiante:</label>
-        <input type="text" id="acudiente-parentesco" name="acudiente-parentesco" required>
-      </div>
-      <div class="form-group">
-        <label for="acudiente-telefono" required>Números telefónicos:</label>
-        <input type="text" id="acudiente-telefono" name="acudiente-telefono" required>
-      </div>
-    </div>
-
-    <!-- Dirección y Correo -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="acudiente-direccion" required>Dirección:</label>
-        <input type="text" id="acudiente-direccion" name="acudiente-direccion" required>
-      </div>
-      <div class="form-group">
-        <label for="acudiente-correo" required>Correo:</label>
-        <input type="email" id="acudiente-correo" name="acudiente-correo" required>
-      </div>
-    </div>
-    <button type="submit" class="save-btn">Guardar Información</button>
-  </form>
-</section>
-<!-- ======== DATOS DE LA MADRE ======== -->
-<section id="datos-madre" class="content" style="display: none;">
-  <h2>Datos de la Madre</h2>
-
-  <form id="form-datos-madre" class="info-general-form">
-    
-    <!-- Nombres y Apellidos -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="madre-nombres" required>Nombres:</label>
-        <input type="text" id="madre-nombres" name="madre-nombres" required>
-      </div>
-      <div class="form-group">
-        <label for="madre-apellidos" required>Apellidos:</label>
-        <input type="text" id="madre-apellidos" name="madre-apellidos" required>
-      </div>
-    </div>
-
-    <!-- Celular y Teléfono Residencia -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="madre-celular" required>Número Celular:</label>
-        <input type="tel" id="madre-celular" name="madre-celular" required>
-      </div>
-      <div class="form-group">
-        <label for="madre-telefono">Teléfono Residencia (si tiene):</label>
-        <input type="tel" id="madre-telefono" name="madre-telefono">
-      </div>
-    </div>
-
-    <!-- Dirección y Ciudad -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="madre-direccion" required>Dirección:</label>
-        <input type="text" id="madre-direccion" name="madre-direccion" required>
-      </div>
-      <div class="form-group">
-        <label for="madre-ciudad" required>Ciudad:</label>
-        <input type="text" id="madre-ciudad" name="madre-ciudad" required>
-      </div>
-    </div>
-
-    <!-- Tipo Documento y Número Documento -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="madre-tipo-documento" required>Tipo de Documento:</label>
-        <select id="madre-tipo-documento" name="madre-tipo-documento" required>
-          <option value="">Seleccione</option>
-          <option value="CC">Cédula de Ciudadanía</option>
-          <option value="CE">Cédula de Extranjería</option>
-          <option value="TI">Tarjeta de Identidad</option>
-          <option value="RC">Registro Civil</option>
-          <option value="PAS">Pasaporte</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="madre-numero-documento" required>Número de Documento:</label>
-        <input type="text" id="madre-numero-documento" name="madre-numero-documento" required>
-      </div>
-    </div>
-
-    <!-- Lugar Expedición y Fecha Nacimiento -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="madre-lugar-expedicion" required>Lugar de Expedición:</label>
-        <input type="text" id="madre-lugar-expedicion" name="madre-lugar-expedicion" required>
-      </div>
-      <div class="form-group">
-        <label for="madre-fecha-nacimiento" required>Fecha de Nacimiento:</label>
-        <input type="date" id="madre-fecha-nacimiento" name="madre-fecha-nacimiento" required>
-      </div>
-    </div>
-
-    <!-- Lugar Nacimiento y Género -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="madre-lugar-nacimiento" required>Lugar de Nacimiento:</label>
-        <input type="text" id="madre-lugar-nacimiento" name="madre-lugar-nacimiento" required>
-      </div>
-      <div class="form-group">
-        <label for="madre-genero" required>Género:</label>
-        <select id="madre-genero" name="madre-genero" required>
-          <option value="" required>Seleccione</option>
-          <option value="Femenino">Femenino</option>
-          <option value="Masculino">Masculino</option>
-          <option value="Otro">Otro</option>
-          <option value="Prefiero no decir">Prefiero no decir</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Correo electrónico -->
-    <div class="form-row">
-      <label for="madre-correo" required>Correo electrónico:</label>
-      <input type="email" id="madre-correo" name="madre-correo" required placeholder="Escribir en minúscula">
-    </div>
-
-    <!-- Nivel Estudios y Ocupación -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="madre-nivel-estudios" required>Nivel de Estudios:</label>
-        <select id="madre-nivel-estudios" name="madre-nivel-estudios" required>
-          <option value="">Seleccione</option>
-          <option value="Primaria">Primaria</option>
-          <option value="Bachillerato">Bachillerato</option>
-          <option value="Técnico">Técnico</option>
-          <option value="Tecnólogo">Tecnólogo</option>
-          <option value="Pregrado">Pregrado</option>
-          <option value="Especialización">Especialización</option>
-          <option value="Maestría">Maestría</option>
-          <option value="Doctorado">Doctorado</option>
-          <option value="Ninguno">Ninguno</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="madre-ocupacion" required>Ocupación / Profesión:</label>
-        <input type="text" id="madre-ocupacion" name="madre-ocupacion" required>
-      </div>
-    </div>
-
-    <!-- Preguntas Sí/No - Primera fila -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="madre-acudiente" required>Será el acudiente en el colegio?:</label>
-        <select id="madre-acudiente" name="madre-acudiente" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="madre-reuniones" required>Asiste a Reuniones:</label>
-        <select id="madre-reuniones" name="madre-reuniones" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Preguntas Sí/No - Segunda fila -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="madre-cabeza-familia" required>Madre cabeza de familia:</label>
-        <select id="madre-cabeza-familia" name="madre-cabeza-familia" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="madre-convive" required>Convive con el estudiante:</label>
-        <select id="madre-convive" name="madre-convive" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-    </div>
-
-    <button type="submit" class="save-btn">Guardar Información</button>
-  </form>
-</section>  
-<!-- ======== DATOS DEL PADRE ======== -->
-<section id="datos-padre" class="content" style="display: none;">
-  <h2>Datos del Padre</h2>
-
-  <form id="form-datos-padre" class="info-general-form">
-    
-    <!-- Nombres y Apellidos -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="padre-nombres" required>Nombres:</label>
-        <input type="text" id="padre-nombres" name="padre-nombres" required>
-      </div>
-      <div class="form-group">
-        <label for="padre-apellidos" required>Apellidos:</label>
-        <input type="text" id="padre-apellidos" name="padre-apellidos" required>
-      </div>
-    </div>
-
-    <!-- Celular y Teléfono Residencia -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="padre-celular" required>Número Celular:</label>
-        <input type="tel" id="padre-celular" name="padre-celular" required>
-      </div>
-      <div class="form-group">
-        <label for="padre-telefono">Teléfono Residencia (si tiene):</label>
-        <input type="tel" id="padre-telefono" name="padre-telefono">
-      </div>
-    </div>
-
-    <!-- Dirección y Ciudad -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="padre-direccion" required>Dirección:</label>
-        <input type="text" id="padre-direccion" name="padre-direccion" required>
-      </div>
-      <div class="form-group">
-        <label for="padre-ciudad" required>Ciudad:</label>
-        <input type="text" id="padre-ciudad" name="padre-ciudad" required>
-      </div>
-    </div>
-
-    <!-- Tipo Documento y Número Documento -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="padre-tipo-documento" required>Tipo de Documento:</label>
-        <select id="padre-tipo-documento" name="padre-tipo-documento" required>
-          <option value="">Seleccione</option>
-          <option value="CC">Cédula de Ciudadanía</option>
-          <option value="CE">Cédula de Extranjería</option>
-          <option value="TI">Tarjeta de Identidad</option>
-          <option value="RC">Registro Civil</option>
-          <option value="PAS">Pasaporte</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="padre-numero-documento" required>Número de Documento:</label>
-        <input type="text" id="padre-numero-documento" name="padre-numero-documento" required>
-      </div>
-    </div>
-
-    <!-- Lugar Expedición y Fecha Nacimiento -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="padre-lugar-expedicion" required>Lugar de Expedición:</label>
-        <input type="text" id="padre-lugar-expedicion" name="padre-lugar-expedicion" required>
-      </div>
-      <div class="form-group">
-        <label for="padre-fecha-nacimiento" required>Fecha de Nacimiento:</label>
-        <input type="date" id="padre-fecha-nacimiento" name="padre-fecha-nacimiento" required>
-      </div>
-    </div>
-
-    <!-- Lugar Nacimiento y Género -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="padre-lugar-nacimiento" required>Lugar de Nacimiento:</label>
-        <input type="text" id="padre-lugar-nacimiento" name="padre-lugar-nacimiento" required>
-      </div>
-      <div class="form-group">
-        <label for="padre-genero" required>Género:</label>
-        <select id="padre-genero" name="padre-genero" required>
-          <option value="">Seleccione</option>
-          <option value="Masculino">Masculino</option>
-          <option value="Femenino">Femenino</option>
-          <option value="Otro">Otro</option>
-          <option value="Prefiero no decir">Prefiero no decir</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Correo electrónico -->
-    <div class="form-row">
-      <label for="padre-correo" required>Correo electrónico:</label>
-      <input type="email" id="padre-correo" name="padre-correo" required placeholder="Escribir en minúscula">
-    </div>
-
-    <!-- Nivel Estudios y Ocupación -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="padre-nivel-estudios" required>Nivel de Estudios:</label>
-        <select id="padre-nivel-estudios" name="padre-nivel-estudios" required>
-          <option value="">Seleccione</option>
-          <option value="Primaria">Primaria</option>
-          <option value="Bachillerato">Bachillerato</option>
-          <option value="Técnico">Técnico</option>
-          <option value="Tecnólogo">Tecnólogo</option>
-          <option value="Pregrado">Pregrado</option>
-          <option value="Especialización">Especialización</option>
-          <option value="Maestría">Maestría</option>
-          <option value="Doctorado">Doctorado</option>
-          <option value="Ninguno">Ninguno</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="padre-ocupacion" required>Ocupación / Profesión:</label>
-        <input type="text" id="padre-ocupacion" name="padre-ocupacion" required>
-      </div>
-    </div>
-
-    <!-- Preguntas Sí/No - Primera fila -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="padre-acudiente" required>Será el acudiente en el colegio?:</label>
-        <select id="padre-acudiente" name="padre-acudiente" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="padre-reuniones" required>Asiste a Reuniones:</label>
-        <select id="padre-reuniones" name="padre-reuniones" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Preguntas Sí/No - Segunda fila -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="padre-cabeza-familia" required>Padre cabeza de familia:</label>
-        <select id="padre-cabeza-familia" name="padre-cabeza-familia" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="padre-convive" required>Convive con el estudiante:</label>
-        <select id="padre-convive" name="padre-convive" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-    </div>
-
-    <button type="submit" class="save-btn">Guardar Información</button>
-  </form>
-</section>
-
-<!-- ======== OTRO ACUDIENTE ======== -->
-<section id="otro-acudiente" class="content" style="display: none;">
-  <h2>Otro Acudiente</h2>
-
-  <form id="form-otro-acudiente" class="info-general-form">
-    
-    <!-- Nombres y Apellidos -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="acudiente-nombres" required>Nombres:</label>
-        <input type="text" id="acudiente-nombres" name="acudiente-nombres" required>
-      </div>
-      <div class="form-group">
-        <label for="acudiente-apellidos" required>Apellidos:</label>
-        <input type="text" id="acudiente-apellidos" name="acudiente-apellidos" required>
-      </div>
-    </div>
-
-    <!-- Celular y Teléfono Residencia -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="acudiente-celular" required>Número Celular:</label>
-        <input type="tel" id="acudiente-celular" name="acudiente-celular" required>
-      </div>
-      <div class="form-group">
-        <label for="acudiente-telefono">Teléfono Residencia (si tiene):</label>
-        <input type="tel" id="acudiente-telefono" name="acudiente-telefono">
-      </div>
-    </div>
-
-    <!-- Dirección y Ciudad -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="acudiente-direccion" required>Dirección:</label>
-        <input type="text" id="acudiente-direccion" name="acudiente-direccion" required>
-      </div>
-      <div class="form-group">
-        <label for="acudiente-ciudad" required>Ciudad:</label>
-        <input type="text" id="acudiente-ciudad" name="acudiente-ciudad" required>
-      </div>
-    </div>
-
-    <!-- Tipo Documento y Número Documento -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="acudiente-tipo-documento" required>Tipo de Documento:</label>
-        <select id="acudiente-tipo-documento" name="acudiente-tipo-documento" required>
-          <option value="">Seleccione</option>
-          <option value="CC">Cédula de Ciudadanía</option>
-          <option value="CE">Cédula de Extranjería</option>
-          <option value="TI">Tarjeta de Identidad</option>
-          <option value="RC">Registro Civil</option>
-          <option value="PAS">Pasaporte</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="acudiente-numero-documento" required>Número de Documento:</label>
-        <input type="text" id="acudiente-numero-documento" name="acudiente-numero-documento" required>
-      </div>
-    </div>
-
-    <!-- Lugar Expedición y Fecha Nacimiento -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="acudiente-lugar-expedicion" required>Lugar de Expedición:</label>
-        <input type="text" id="acudiente-lugar-expedicion" name="acudiente-lugar-expedicion" required>
-      </div>
-      <div class="form-group">
-        <label for="acudiente-fecha-nacimiento" required>Fecha de Nacimiento:</label>
-        <input type="date" id="acudiente-fecha-nacimiento" name="acudiente-fecha-nacimiento" required>
-      </div>
-    </div>
-
-    <!-- Lugar Nacimiento y Género -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="acudiente-lugar-nacimiento" required>Lugar de Nacimiento:</label>
-        <input type="text" id="acudiente-lugar-nacimiento" name="acudiente-lugar-nacimiento" required>
-      </div>
-      <div class="form-group">
-        <label for="acudiente-genero" required>Género:</label>
-        <select id="acudiente-genero" name="acudiente-genero" required>
-          <option value="">Seleccione</option>
-          <option value="Masculino">Masculino</option>
-          <option value="Femenino">Femenino</option>
-          <option value="Otro">Otro</option>
-          <option value="Prefiero no decir">Prefiero no decir</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Correo electrónico -->
-    <div class="form-row">
-      <label for="acudiente-correo" required>Correo electrónico:</label>
-      <input type="email" id="acudiente-correo" name="acudiente-correo" required placeholder="Escribir en minúscula">
-    </div>
-
-    <!-- Nivel Estudios y Ocupación -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="acudiente-nivel-estudios" required>Nivel de Estudios:</label>
-        <select id="acudiente-nivel-estudios" name="acudiente-nivel-estudios" required>
-          <option value="">Seleccione</option>
-          <option value="Primaria">Primaria</option>
-          <option value="Bachillerato">Bachillerato</option>
-          <option value="Técnico">Técnico</option>
-          <option value="Tecnólogo">Tecnólogo</option>
-          <option value="Pregrado">Pregrado</option>
-          <option value="Especialización">Especialización</option>
-          <option value="Maestría">Maestría</option>
-          <option value="Doctorado">Doctorado</option>
-          <option value="Ninguno">Ninguno</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="acudiente-ocupacion" required>Ocupación / Profesión:</label>
-        <input type="text" id="acudiente-ocupacion" name="acudiente-ocupacion" required>
-      </div>
-    </div>
-
-    <!-- Preguntas Sí/No -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="acudiente-acudiente" required>Será el acudiente en el colegio?:</label>
-        <select id="acudiente-acudiente" name="acudiente-acudiente" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="acudiente-reuniones" required>Asiste a Reuniones:</label>
-        <select id="acudiente-reuniones" name="acudiente-reuniones" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Convive con el estudiante -->
-    <div class="form-row">
-      <label for="acudiente-convive" required>Convive con el estudiante:</label>
-      <select id="acudiente-convive" name="acudiente-convive" required>
-        <option value="">Seleccione</option>
-        <option value="si">Sí</option>
-        <option value="no">No</option>
-      </select>
-    </div>
-
-    <button type="submit" class="save-btn">Guardar Información</button>
-  </form>
-</section>
-  <!-- ======== DATOS DE LA VIVIENDA ======== -->
-<section id="datos-vivienda" class="content" style="display: none;">
-  <h2>Datos de la Vivienda</h2>
-
-  <form id="form-datos-vivienda" class="info-general-form">
-    
-    <!-- Número de personas en el hogar -->
-    <div class="form-row">
-      <label for="numero-personas" required>Número de personas que viven en su hogar:</label>
-      <input type="number" id="numero-personas" name="numero-personas" min="1" max="20" required>
-    </div>
-
-    <!-- Tipo de vivienda -->
-    <div class="form-row">
-      <label for="tipo-vivienda" required>¿La vivienda donde habita la familia es?</label>
-      <select id="tipo-vivienda" name="tipo-vivienda" required>
-        <option value="">Seleccione</option>
-        <option value="propia">Propia</option>
-        <option value="familiar">Familiar</option>
-        <option value="arriendo">En arriendo</option>
-        <option value="comodato">En comodato</option>
-      </select>
-    </div>
-
-    <!-- Servicios básicos - Primera fila -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="servicio-energia" required>¿Su vivienda cuenta con servicios básicos de Energía?</label>
-        <select id="servicio-energia" name="servicio-energia" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="servicio-agua" required>¿Su vivienda cuenta con servicios básicos de Agua?&nbsp&nbsp</label>
-        <select id="servicio-agua" name="servicio-agua" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Servicios básicos - Segunda fila -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="servicio-alcantarillado" required>¿Su vivienda cuenta con servicios básicos de Alcantarillado?</label>
-        <select id="servicio-alcantarillado" name="servicio-alcantarillado" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="servicio-gas" required>¿Su vivienda cuenta con servicios básicos de Gas Domiciliario?</label>
-        <select id="servicio-gas" name="servicio-gas" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Servicios básicos - Tercera fila -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="servicio-telefono" required>¿Su vivienda cuenta con servicios básicos de Teléfono?</label>
-        <select id="servicio-telefono" name="servicio-telefono" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="servicio-internet" required>¿Su vivienda cuenta con servicios básicos de Internet?</label>
-        <select id="servicio-internet" name="servicio-internet" required>
-          <option value="">Seleccione</option>
-          <option value="si">Sí</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-    </div>
-
-    <button type="submit" class="save-btn">Guardar Información</button>
-  </form>
-</section>
-
-<!-- ======== INFORMACIÓN DE SALUD ======== -->
-<section id="informacion-salud" class="content" style="display: none;">
-  <h2>Información de Salud del Estudiante</h2>
-
-  <form id="form-informacion-salud" class="info-general-form">
-    
-    <!-- Tratamiento médico actual -->
-    <div class="form-row">
-      <label for="tratamiento-medico" required>¿Se encuentra actualmente en tratamiento médico?</label>
-      <select id="tratamiento-medico" name="tratamiento-medico" required>
-        <option value="">Seleccione</option>
-        <option value="si">Sí</option>
-        <option value="no">No</option>
-      </select>
-    </div>
-
-    <!-- Alergias a medicamentos -->
-    <div class="form-row">
-      <label for="alergia-medicamentos" required>¿Es alérgico(a) a algún medicamento?</label>
-      <select id="alergia-medicamentos" name="alergia-medicamentos" required>
-        <option value="">Seleccione</option>
-        <option value="si">Sí</option>
-        <option value="no">No</option>
-      </select>
-    </div>
-
-    <!-- Especificar alergias (se muestra solo si respuesta es Sí) -->
-    <div id="alergia-especificar-div" style="display: none;">
-      <div class="form-row">
-        <label for="alergia-especificar" required>Si su respuesta es "Sí", por favor especifique:</label>
-        <textarea id="alergia-especificar" name="alergia-especificar" rows="3" placeholder="Especifique a qué medicamentos es alérgico..."></textarea>
-      </div>
-    </div>
-
-    <!-- Enfermedades diagnosticadas -->
-    <div class="form-row">
-      <label for="enfermedad-diagnosticada" required>¿Padece alguna enfermedad diagnosticada?</label>
-      <select id="enfermedad-diagnosticada" name="enfermedad-diagnosticada" required>
-        <option value="">Seleccione</option>
-        <option value="si">Sí</option>
-        <option value="no">No</option>
-      </select>
-    </div>
-
-    <!-- Especificar enfermedades (se muestra solo si respuesta es Sí) -->
-    <div id="enfermedad-especificar-div" style="display: none;">
-      <div class="form-row">
-        <label for="enfermedad-especificar" required>Si su respuesta es "Sí", indique cuál o cuáles:</label>
-        <textarea id="enfermedad-especificar" name="enfermedad-especificar" rows="3" placeholder="Especifique las enfermedades diagnosticadas..."></textarea>
-      </div>
-    </div>
-
-    <!-- Peso y Estatura -->
-    <div class="form-row-inline">
-      <div class="form-group">
-        <label for="peso" required>Peso:</label>
-        <input type="number" id="peso" name="peso" min="10" max="200" step="0.1" required placeholder="kg">
-      </div>
-      <div class="form-group">
-        <label for="estatura" required>Estatura:</label>
-        <input type="number" id="estatura" name="estatura" min="50" max="250" step="0.1" required placeholder="cm">
-      </div>
-    </div>
-
-    <!-- Observaciones adicionales -->
-    <div class="form-row">
-      <label for="observaciones-fisicas">Observaciones adicionales sobre el estado físico:</label>
-      <textarea id="observaciones-fisicas" name="observaciones-fisicas" rows="3" placeholder="Observaciones sobre condición física..."></textarea>
-    </div>
-
-    <!-- Medicamentos de uso permanente -->
-    <div class="form-row">
-      <label for="medicamentos-permanentes">Medicamentos de uso permanente:</label>
-      <textarea id="medicamentos-permanentes" name="medicamentos-permanentes" rows="3" placeholder="Lista de medicamentos de uso regular..."></textarea>
-    </div>
-
-    <!-- Información adicional de salud -->
-    <div class="form-row">
-      <label for="informacion-salud-adicional">Enfermedades, alergias u otros aspectos de salud que deban tenerse en cuenta:</label>
-      <textarea id="informacion-salud-adicional" name="informacion-salud-adicional" rows="4" placeholder="Información adicional importante sobre la salud del estudiante..."></textarea>
-    </div>
-
-    <button type="submit" class="save-btn">Guardar Información</button>
-  </form>
-</section>
-
-<!-- ======== LINK Y DOCUMENTOS ======== -->
-<section id="link-documentos" class="content" style="display: none;">
-  <h2>Link y Documentos a Diligenciar</h2>
-
-  <div class="info-general-form">
-    
-    <!-- Información principal -->
-    <div class="form-row">
-      <p><strong>Por favor:</strong></p>
-    </div>
-
-    <!-- Paso 1: Formulario en línea -->
-    <div class="form-row">
-      <div class="paso-item">
-        <h3>1. Diligencie el formulario en línea</h3>
-        <p>Ingrese al siguiente enlace usando el número de identificación del estudiante:</p>
-        <div class="link-container">
-          <a href="https://formularios.educacionbogota.edu.co/index.php/121449?lang=es" target="_blank" class="document-link">
-            🔗 https://formularios.educacionbogota.edu.co/index.php/121449?lang=es
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Paso 2: Descargar documentos -->
-    <div class="form-row">
-      <div class="paso-item">
-        <h3>2. Descargue los siguientes documentos:</h3>
-        
-        <div class="documentos-lista">
-          <div class="documento-item">
-            <span class="documento-icon">📄</span>
-            <span class="documento-nombre">FORMULARIO SIMPADE 2026</span>
-            <button type="button" class="descargar-btn">Descargar</button>
+      <section id="info-general" class="content" style="display: none">
+        <h2>Información General</h2>
+
+        <form id="form-info-general" class="info-general-form">
+          <!-- Dirección y Barrio -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="direccion" required>Dirección:</label>
+              <input type="text" id="direccion" name="direccion" required />
+            </div>
+            <div class="form-group">
+              <label for="barrio" required>Barrio:</label>
+              <input type="text" id="barrio" name="barrio" required />
+            </div>
           </div>
-          
-          <div class="documento-item">
-            <span class="documento-icon">📄</span>
-            <span class="documento-nombre">FORMATO DE USO DE IMAGEN 2026 MCM</span>
-            <button type="button" class="descargar-btn">Descargar</button>
+
+          <!-- Madre cabeza de familia y Estrato -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="madre-cabeza" required
+                >Alumno Madre Cabeza de Familia:</label
+              >
+              <select id="madre-cabeza" name="madre-cabeza" required>
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="estrato" required>Estrato:</label>
+              <select id="estrato" name="estrato" required>
+                <option value="">Seleccione</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
           </div>
-          
-          <div class="documento-item">
-            <span class="documento-icon">📄</span>
-            <span class="documento-nombre">ACTA DE ACUERDOS Y COMPROMISOS</span>
-            <button type="button" class="descargar-btn">Descargar</button>
+
+          <!-- Municipio -->
+          <div class="form-row">
+            <label for="municipio" required>Municipio:</label>
+            <input type="text" id="municipio" name="municipio" required />
+          </div>
+
+          <!-- Historial Académico -->
+          <div class="form-row">
+            <p>
+              <strong>Historial Académico Año 2024:</strong><br />
+              (Por favor diligenciar todos los espacios: Para Primaria desde
+              grado Jardín y para Bachillerato desde grado 5°)
+            </p>
+
+            <table border="1" cellpadding="8" cellspacing="0">
+              <thead style="background: #f1f1f1">
+                <tr>
+                  <th>Año</th>
+                  <th>Colegio</th>
+                  <th>Ciudad</th>
+                  <th>Grado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="text" placeholder="2025" required /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="2024" required /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="2023" required /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="2022" required /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="2021" required /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="2020" required /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                </tr>
+                <tr>
+                  <td><input type="text" placeholder="2019" required /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                  <td><input type="text" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Sisben y EPS -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="sisben" required>Sisben:</label>
+              <select id="sisben" name="sisben" required>
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="eps" required>IPS/EPS:</label>
+              <input type="text" id="eps" name="eps" required />
+            </div>
+          </div>
+
+          <!-- Etnia y Desplazado -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="etnia" required>Etnia:</label>
+              <select id="etnia" name="etnia">
+                <option value="">Seleccione</option>
+                <option value="NINGUNA">NINGUNA</option>
+                <option value="AFRODESCENDIENTE">AFRODESCENDIENTE</option>
+                <option value="ACHAGUA">ACHAGUA</option>
+                <option value="AMBALO">AMBALO</option>
+                <option value="AMORUA">AMORUA</option>
+                <option value="ARHUACO">ARHUACO</option>
+                <option value="AWA">AWA</option>
+                <option value="BANIVA">BANIVA</option>
+                <option value="BARA">BARA</option>
+                <option value="BARASANO">BARASANO</option>
+                <option value="BARI">BARI</option>
+                <option value="BETOYE">BETOYE (GUAHIBO)</option>
+                <option value="BORA">BORA</option>
+                <option value="CAMENTSA">CAMENTSA (KAMSA - KAMENTSA)</option>
+                <option value="CHIMILAS">CHIMILAS</option>
+                <option value="CHIRICOA">CHIRICOA</option>
+                <option value="COREGUAJE">COREGUAJE</option>
+                <option value="COCAMA">COCAMA</option>
+                <option value="CUNA">CUNA</option>
+                <option value="DESANO">DESANO</option>
+                <option value="EMBERA CHAMI">EMBERA CHAMI</option>
+                <option value="EMBERA KATIO">EMBERA KATIO</option>
+                <option value="GUAMBIANO">GUAMBIANO</option>
+                <option value="INGA">INGA</option>
+                <option value="KOGUI">KOGUI</option>
+                <option value="MUISCA">MUISCA</option>
+                <option value="NEGRITUDES">NEGRITUDES</option>
+                <option value="NUKAK">NUKAK MAKU</option>
+                <option value="PAEZ">PAEZ (NASA)</option>
+                <option value="PIJAO">PIJAO</option>
+                <option value="PUINAVE">PUINAVE</option>
+                <option value="RAIZAL">RAIZAL</option>
+                <option value="WAYUU">WAYUU</option>
+                <option value="YANACONA">YANACONA</option>
+                <option value="ZENU">ZENU (SENU)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="desplazado" required>Desplazado:</label>
+              <select id="desplazado" name="desplazado">
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Discapacidad -->
+          <div class="form-row">
+            <label for="discapacidad-diagnostico" required
+              >Discapacidad Diagnosticada:</label
+            >
+            <select
+              id="discapacidad-diagnostico"
+              name="discapacidad-diagnostico"
+            >
+              <option value="">Seleccione</option>
+              <option value="si">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div id="discapacidad-div" style="display: none">
+            <div class="form-row-inline">
+              <div class="form-group">
+                <label for="discapacidad" required>Tipo de Discapacidad:</label>
+                <select id="discapacidad" name="discapacidad">
+                  <option value="">Seleccione</option>
+                  <option value="fisica">DISCAPACIDAD FÍSICA</option>
+                  <option value="auditiva">DISCAPACIDAD AUDITIVA</option>
+                  <option value="visual">DISCAPACIDAD VISUAL</option>
+                  <option value="sordoceguera">SORDOCEGUERA</option>
+                  <option value="intelectual">DISCAPACIDAD INTELECTUAL</option>
+                  <option value="psicosocial">
+                    DISCAPACIDAD PSICOSOCIAL (MENTAL)
+                  </option>
+                  <option value="multiple">DISCAPACIDAD MÚLTIPLE</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="certificado" required>Adjuntar Certificado:</label>
+                <input type="file" id="certificado" name="certificado" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Hermanos -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="hermanos" required>Número de Hermanos:</label>
+              <input type="number" id="hermanos" name="hermanos" />
+            </div>
+            <div class="form-group">
+              <label for="lugar-hermanos" required
+                >Lugar que ocupa entre ellos:</label
+              >
+              <input type="number" id="lugar-hermanos" name="lugar-hermanos" />
+            </div>
+            <div class="form-group">
+              <label for="hermanos-colegio" required
+                >¿Tiene hermanos en el colegio?:</label
+              >
+              <select id="hermanos-colegio" name="hermanos-colegio">
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Lateralidad -->
+          <div class="form-row">
+            <label for="lateralidad" required
+              >Lateralidad del estudiante:</label
+            >
+            <select id="lateralidad" name="lateralidad">
+              <option value="">Seleccione</option>
+              <option value="zurdo">Zurdo</option>
+              <option value="diestro">Diestro</option>
+              <option value="ambidiestro">Ambidiestro</option>
+            </select>
+          </div>
+
+          <hr />
+
+          <!-- Información del acudiente -->
+          <div class="form-row">
+            <p><strong>Información del acudiente responsable:</strong></p>
+          </div>
+
+          <!-- Nombre y Documento -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="acudiente-nombre" required
+                >Nombre del acudiente:</label
+              >
+              <input
+                type="text"
+                id="acudiente-nombre"
+                name="acudiente-nombre"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="acudiente-doc" required>Número de documento:</label>
+              <input
+                type="number"
+                id="acudiente-doc"
+                name="acudiente-doc"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Parentesco y Teléfono -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="acudiente-parentesco" required
+                >Parentesco con el estudiante:</label
+              >
+              <input
+                type="text"
+                id="acudiente-parentesco"
+                name="acudiente-parentesco"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="acudiente-telefono" required
+                >Números telefónicos:</label
+              >
+              <input
+                type="text"
+                id="acudiente-telefono"
+                name="acudiente-telefono"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Dirección y Correo -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="acudiente-direccion" required>Dirección:</label>
+              <input
+                type="text"
+                id="acudiente-direccion"
+                name="acudiente-direccion"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="acudiente-correo" required>Correo:</label>
+              <input
+                type="email"
+                id="acudiente-correo"
+                name="acudiente-correo"
+                required
+              />
+            </div>
+          </div>
+          <button type="submit" class="save-btn">Guardar Información</button>
+        </form>
+      </section>
+      <!-- ======== DATOS DE LA MADRE ======== -->
+      <section id="datos-madre" class="content" style="display: none">
+        <h2>Datos de la Madre</h2>
+
+        <form id="form-datos-madre" class="info-general-form">
+          <!-- Nombres y Apellidos -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="madre-nombres" required>Nombres:</label>
+              <input
+                type="text"
+                id="madre-nombres"
+                name="madre-nombres"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="madre-apellidos" required>Apellidos:</label>
+              <input
+                type="text"
+                id="madre-apellidos"
+                name="madre-apellidos"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Celular y Teléfono Residencia -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="madre-celular" required>Número Celular:</label>
+              <input
+                type="tel"
+                id="madre-celular"
+                name="madre-celular"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="madre-telefono"
+                >Teléfono Residencia (si tiene):</label
+              >
+              <input type="tel" id="madre-telefono" name="madre-telefono" />
+            </div>
+          </div>
+
+          <!-- Dirección y Ciudad -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="madre-direccion" required>Dirección:</label>
+              <input
+                type="text"
+                id="madre-direccion"
+                name="madre-direccion"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="madre-ciudad" required>Ciudad:</label>
+              <input
+                type="text"
+                id="madre-ciudad"
+                name="madre-ciudad"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Tipo Documento y Número Documento -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="madre-tipo-documento" required
+                >Tipo de Documento:</label
+              >
+              <select
+                id="madre-tipo-documento"
+                name="madre-tipo-documento"
+                required
+              >
+                <option value="">Seleccione</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+                <option value="CE">Cédula de Extranjería</option>
+                <option value="TI">Tarjeta de Identidad</option>
+                <option value="RC">Registro Civil</option>
+                <option value="PAS">Pasaporte</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="madre-numero-documento" required
+                >Número de Documento:</label
+              >
+              <input
+                type="text"
+                id="madre-numero-documento"
+                name="madre-numero-documento"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Lugar Expedición y Fecha Nacimiento -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="madre-lugar-expedicion" required
+                >Lugar de Expedición:</label
+              >
+              <input
+                type="text"
+                id="madre-lugar-expedicion"
+                name="madre-lugar-expedicion"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="madre-fecha-nacimiento" required
+                >Fecha de Nacimiento:</label
+              >
+              <input
+                type="date"
+                id="madre-fecha-nacimiento"
+                name="madre-fecha-nacimiento"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Lugar Nacimiento y Género -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="madre-lugar-nacimiento" required
+                >Lugar de Nacimiento:</label
+              >
+              <input
+                type="text"
+                id="madre-lugar-nacimiento"
+                name="madre-lugar-nacimiento"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="madre-genero" required>Género:</label>
+              <select id="madre-genero" name="madre-genero" required>
+                <option value="" required>Seleccione</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Otro">Otro</option>
+                <option value="Prefiero no decir">Prefiero no decir</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Correo electrónico -->
+          <div class="form-row">
+            <label for="madre-correo" required>Correo electrónico:</label>
+            <input
+              type="email"
+              id="madre-correo"
+              name="madre-correo"
+              required
+              placeholder="Escribir en minúscula"
+            />
+          </div>
+
+          <!-- Nivel Estudios y Ocupación -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="madre-nivel-estudios" required
+                >Nivel de Estudios:</label
+              >
+              <select
+                id="madre-nivel-estudios"
+                name="madre-nivel-estudios"
+                required
+              >
+                <option value="">Seleccione</option>
+                <option value="Primaria">Primaria</option>
+                <option value="Bachillerato">Bachillerato</option>
+                <option value="Técnico">Técnico</option>
+                <option value="Tecnólogo">Tecnólogo</option>
+                <option value="Pregrado">Pregrado</option>
+                <option value="Especialización">Especialización</option>
+                <option value="Maestría">Maestría</option>
+                <option value="Doctorado">Doctorado</option>
+                <option value="Ninguno">Ninguno</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="madre-ocupacion" required
+                >Ocupación / Profesión:</label
+              >
+              <input
+                type="text"
+                id="madre-ocupacion"
+                name="madre-ocupacion"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Preguntas Sí/No - Primera fila -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="madre-acudiente" required
+                >Será el acudiente en el colegio?:</label
+              >
+              <select id="madre-acudiente" name="madre-acudiente" required>
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="madre-reuniones" required>Asiste a Reuniones:</label>
+              <select id="madre-reuniones" name="madre-reuniones" required>
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Preguntas Sí/No - Segunda fila -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="madre-cabeza-familia" required
+                >Madre cabeza de familia:</label
+              >
+              <select
+                id="madre-cabeza-familia"
+                name="madre-cabeza-familia"
+                required
+              >
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="madre-convive" required
+                >Convive con el estudiante:</label
+              >
+              <select id="madre-convive" name="madre-convive" required>
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="save-btn">Guardar Información</button>
+        </form>
+      </section>
+      <!-- ======== DATOS DEL PADRE ======== -->
+      <section id="datos-padre" class="content" style="display: none">
+        <h2>Datos del Padre</h2>
+
+        <form id="form-datos-padre" class="info-general-form">
+          <!-- Nombres y Apellidos -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="padre-nombres" required>Nombres:</label>
+              <input
+                type="text"
+                id="padre-nombres"
+                name="padre-nombres"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="padre-apellidos" required>Apellidos:</label>
+              <input
+                type="text"
+                id="padre-apellidos"
+                name="padre-apellidos"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Celular y Teléfono Residencia -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="padre-celular" required>Número Celular:</label>
+              <input
+                type="tel"
+                id="padre-celular"
+                name="padre-celular"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="padre-telefono"
+                >Teléfono Residencia (si tiene):</label
+              >
+              <input type="tel" id="padre-telefono" name="padre-telefono" />
+            </div>
+          </div>
+
+          <!-- Dirección y Ciudad -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="padre-direccion" required>Dirección:</label>
+              <input
+                type="text"
+                id="padre-direccion"
+                name="padre-direccion"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="padre-ciudad" required>Ciudad:</label>
+              <input
+                type="text"
+                id="padre-ciudad"
+                name="padre-ciudad"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Tipo Documento y Número Documento -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="padre-tipo-documento" required
+                >Tipo de Documento:</label
+              >
+              <select
+                id="padre-tipo-documento"
+                name="padre-tipo-documento"
+                required
+              >
+                <option value="">Seleccione</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+                <option value="CE">Cédula de Extranjería</option>
+                <option value="TI">Tarjeta de Identidad</option>
+                <option value="RC">Registro Civil</option>
+                <option value="PAS">Pasaporte</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="padre-numero-documento" required
+                >Número de Documento:</label
+              >
+              <input
+                type="text"
+                id="padre-numero-documento"
+                name="padre-numero-documento"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Lugar Expedición y Fecha Nacimiento -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="padre-lugar-expedicion" required
+                >Lugar de Expedición:</label
+              >
+              <input
+                type="text"
+                id="padre-lugar-expedicion"
+                name="padre-lugar-expedicion"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="padre-fecha-nacimiento" required
+                >Fecha de Nacimiento:</label
+              >
+              <input
+                type="date"
+                id="padre-fecha-nacimiento"
+                name="padre-fecha-nacimiento"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Lugar Nacimiento y Género -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="padre-lugar-nacimiento" required
+                >Lugar de Nacimiento:</label
+              >
+              <input
+                type="text"
+                id="padre-lugar-nacimiento"
+                name="padre-lugar-nacimiento"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="padre-genero" required>Género:</label>
+              <select id="padre-genero" name="padre-genero" required>
+                <option value="">Seleccione</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Otro">Otro</option>
+                <option value="Prefiero no decir">Prefiero no decir</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Correo electrónico -->
+          <div class="form-row">
+            <label for="padre-correo" required>Correo electrónico:</label>
+            <input
+              type="email"
+              id="padre-correo"
+              name="padre-correo"
+              required
+              placeholder="Escribir en minúscula"
+            />
+          </div>
+
+          <!-- Nivel Estudios y Ocupación -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="padre-nivel-estudios" required
+                >Nivel de Estudios:</label
+              >
+              <select
+                id="padre-nivel-estudios"
+                name="padre-nivel-estudios"
+                required
+              >
+                <option value="">Seleccione</option>
+                <option value="Primaria">Primaria</option>
+                <option value="Bachillerato">Bachillerato</option>
+                <option value="Técnico">Técnico</option>
+                <option value="Tecnólogo">Tecnólogo</option>
+                <option value="Pregrado">Pregrado</option>
+                <option value="Especialización">Especialización</option>
+                <option value="Maestría">Maestría</option>
+                <option value="Doctorado">Doctorado</option>
+                <option value="Ninguno">Ninguno</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="padre-ocupacion" required
+                >Ocupación / Profesión:</label
+              >
+              <input
+                type="text"
+                id="padre-ocupacion"
+                name="padre-ocupacion"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Preguntas Sí/No - Primera fila -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="padre-acudiente" required
+                >Será el acudiente en el colegio?:</label
+              >
+              <select id="padre-acudiente" name="padre-acudiente" required>
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="padre-reuniones" required>Asiste a Reuniones:</label>
+              <select id="padre-reuniones" name="padre-reuniones" required>
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Preguntas Sí/No - Segunda fila -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="padre-cabeza-familia" required
+                >Padre cabeza de familia:</label
+              >
+              <select
+                id="padre-cabeza-familia"
+                name="padre-cabeza-familia"
+                required
+              >
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="padre-convive" required
+                >Convive con el estudiante:</label
+              >
+              <select id="padre-convive" name="padre-convive" required>
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="save-btn">Guardar Información</button>
+        </form>
+      </section>
+
+      <!-- ======== OTRO ACUDIENTE ======== -->
+      <section id="otro-acudiente" class="content" style="display: none">
+        <h2>Otro Acudiente</h2>
+
+        <form id="form-otro-acudiente" class="info-general-form">
+          <!-- Nombres y Apellidos -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="acudiente-nombres" required>Nombres:</label>
+              <input
+                type="text"
+                id="acudiente-nombres"
+                name="acudiente-nombres"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="acudiente-apellidos" required>Apellidos:</label>
+              <input
+                type="text"
+                id="acudiente-apellidos"
+                name="acudiente-apellidos"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Celular y Teléfono Residencia -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="acudiente-celular" required>Número Celular:</label>
+              <input
+                type="tel"
+                id="acudiente-celular"
+                name="acudiente-celular"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="acudiente-telefono"
+                >Teléfono Residencia (si tiene):</label
+              >
+              <input
+                type="tel"
+                id="acudiente-telefono"
+                name="acudiente-telefono"
+              />
+            </div>
+          </div>
+
+          <!-- Dirección y Ciudad -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="acudiente-direccion" required>Dirección:</label>
+              <input
+                type="text"
+                id="acudiente-direccion"
+                name="acudiente-direccion"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="acudiente-ciudad" required>Ciudad:</label>
+              <input
+                type="text"
+                id="acudiente-ciudad"
+                name="acudiente-ciudad"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Tipo Documento y Número Documento -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="acudiente-tipo-documento" required
+                >Tipo de Documento:</label
+              >
+              <select
+                id="acudiente-tipo-documento"
+                name="acudiente-tipo-documento"
+                required
+              >
+                <option value="">Seleccione</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+                <option value="CE">Cédula de Extranjería</option>
+                <option value="TI">Tarjeta de Identidad</option>
+                <option value="RC">Registro Civil</option>
+                <option value="PAS">Pasaporte</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="acudiente-numero-documento" required
+                >Número de Documento:</label
+              >
+              <input
+                type="text"
+                id="acudiente-numero-documento"
+                name="acudiente-numero-documento"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Lugar Expedición y Fecha Nacimiento -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="acudiente-lugar-expedicion" required
+                >Lugar de Expedición:</label
+              >
+              <input
+                type="text"
+                id="acudiente-lugar-expedicion"
+                name="acudiente-lugar-expedicion"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="acudiente-fecha-nacimiento" required
+                >Fecha de Nacimiento:</label
+              >
+              <input
+                type="date"
+                id="acudiente-fecha-nacimiento"
+                name="acudiente-fecha-nacimiento"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Lugar Nacimiento y Género -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="acudiente-lugar-nacimiento" required
+                >Lugar de Nacimiento:</label
+              >
+              <input
+                type="text"
+                id="acudiente-lugar-nacimiento"
+                name="acudiente-lugar-nacimiento"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="acudiente-genero" required>Género:</label>
+              <select id="acudiente-genero" name="acudiente-genero" required>
+                <option value="">Seleccione</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Otro">Otro</option>
+                <option value="Prefiero no decir">Prefiero no decir</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Correo electrónico -->
+          <div class="form-row">
+            <label for="acudiente-correo" required>Correo electrónico:</label>
+            <input
+              type="email"
+              id="acudiente-correo"
+              name="acudiente-correo"
+              required
+              placeholder="Escribir en minúscula"
+            />
+          </div>
+
+          <!-- Nivel Estudios y Ocupación -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="acudiente-nivel-estudios" required
+                >Nivel de Estudios:</label
+              >
+              <select
+                id="acudiente-nivel-estudios"
+                name="acudiente-nivel-estudios"
+                required
+              >
+                <option value="">Seleccione</option>
+                <option value="Primaria">Primaria</option>
+                <option value="Bachillerato">Bachillerato</option>
+                <option value="Técnico">Técnico</option>
+                <option value="Tecnólogo">Tecnólogo</option>
+                <option value="Pregrado">Pregrado</option>
+                <option value="Especialización">Especialización</option>
+                <option value="Maestría">Maestría</option>
+                <option value="Doctorado">Doctorado</option>
+                <option value="Ninguno">Ninguno</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="acudiente-ocupacion" required
+                >Ocupación / Profesión:</label
+              >
+              <input
+                type="text"
+                id="acudiente-ocupacion"
+                name="acudiente-ocupacion"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Preguntas Sí/No -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="acudiente-acudiente" required
+                >Será el acudiente en el colegio?:</label
+              >
+              <select
+                id="acudiente-acudiente"
+                name="acudiente-acudiente"
+                required
+              >
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="acudiente-reuniones" required
+                >Asiste a Reuniones:</label
+              >
+              <select
+                id="acudiente-reuniones"
+                name="acudiente-reuniones"
+                required
+              >
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Convive con el estudiante -->
+          <div class="form-row">
+            <label for="acudiente-convive" required
+              >Convive con el estudiante:</label
+            >
+            <select id="acudiente-convive" name="acudiente-convive" required>
+              <option value="">Seleccione</option>
+              <option value="si">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <button type="submit" class="save-btn">Guardar Información</button>
+        </form>
+      </section>
+      <!-- ======== DATOS DE LA VIVIENDA ======== -->
+      <section id="datos-vivienda" class="content" style="display: none">
+        <h2>Datos de la Vivienda</h2>
+
+        <form id="form-datos-vivienda" class="info-general-form">
+          <!-- Número de personas en el hogar -->
+          <div class="form-row">
+            <label for="numero-personas" required
+              >Número de personas que viven en su hogar:</label
+            >
+            <input
+              type="number"
+              id="numero-personas"
+              name="numero-personas"
+              min="1"
+              max="20"
+              required
+            />
+          </div>
+
+          <!-- Tipo de vivienda -->
+          <div class="form-row">
+            <label for="tipo-vivienda" required
+              >¿La vivienda donde habita la familia es?</label
+            >
+            <select id="tipo-vivienda" name="tipo-vivienda" required>
+              <option value="">Seleccione</option>
+              <option value="propia">Propia</option>
+              <option value="familiar">Familiar</option>
+              <option value="arriendo">En arriendo</option>
+              <option value="comodato">En comodato</option>
+            </select>
+          </div>
+
+          <!-- Servicios básicos - Primera fila -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="servicio-energia" required
+                >¿Su vivienda cuenta con servicios básicos de Energía?</label
+              >
+              <select id="servicio-energia" name="servicio-energia" required>
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="servicio-agua" required
+                >¿Su vivienda cuenta con servicios básicos de
+                Agua?&nbsp&nbsp</label
+              >
+              <select id="servicio-agua" name="servicio-agua" required>
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Servicios básicos - Segunda fila -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="servicio-alcantarillado" required
+                >¿Su vivienda cuenta con servicios básicos de
+                Alcantarillado?</label
+              >
+              <select
+                id="servicio-alcantarillado"
+                name="servicio-alcantarillado"
+                required
+              >
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="servicio-gas" required
+                >¿Su vivienda cuenta con servicios básicos de Gas
+                Domiciliario?</label
+              >
+              <select id="servicio-gas" name="servicio-gas" required>
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Servicios básicos - Tercera fila -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="servicio-telefono" required
+                >¿Su vivienda cuenta con servicios básicos de Teléfono?</label
+              >
+              <select id="servicio-telefono" name="servicio-telefono" required>
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="servicio-internet" required
+                >¿Su vivienda cuenta con servicios básicos de Internet?</label
+              >
+              <select id="servicio-internet" name="servicio-internet" required>
+                <option value="">Seleccione</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="save-btn">Guardar Información</button>
+        </form>
+      </section>
+
+      <!-- ======== INFORMACIÓN DE SALUD ======== -->
+      <section id="informacion-salud" class="content" style="display: none">
+        <h2>Información de Salud del Estudiante</h2>
+
+        <form id="form-informacion-salud" class="info-general-form">
+          <!-- Tratamiento médico actual -->
+          <div class="form-row">
+            <label for="tratamiento-medico" required
+              >¿Se encuentra actualmente en tratamiento médico?</label
+            >
+            <select id="tratamiento-medico" name="tratamiento-medico" required>
+              <option value="">Seleccione</option>
+              <option value="si">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <!-- Alergias a medicamentos -->
+          <div class="form-row">
+            <label for="alergia-medicamentos" required
+              >¿Es alérgico(a) a algún medicamento?</label
+            >
+            <select
+              id="alergia-medicamentos"
+              name="alergia-medicamentos"
+              required
+            >
+              <option value="">Seleccione</option>
+              <option value="si">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <!-- Especificar alergias (se muestra solo si respuesta es Sí) -->
+          <div id="alergia-especificar-div" style="display: none">
+            <div class="form-row">
+              <label for="alergia-especificar" required
+                >Si su respuesta es "Sí", por favor especifique:</label
+              >
+              <textarea
+                id="alergia-especificar"
+                name="alergia-especificar"
+                rows="3"
+                placeholder="Especifique a qué medicamentos es alérgico..."
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Enfermedades diagnosticadas -->
+          <div class="form-row">
+            <label for="enfermedad-diagnosticada" required
+              >¿Padece alguna enfermedad diagnosticada?</label
+            >
+            <select
+              id="enfermedad-diagnosticada"
+              name="enfermedad-diagnosticada"
+              required
+            >
+              <option value="">Seleccione</option>
+              <option value="si">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <!-- Especificar enfermedades (se muestra solo si respuesta es Sí) -->
+          <div id="enfermedad-especificar-div" style="display: none">
+            <div class="form-row">
+              <label for="enfermedad-especificar" required
+                >Si su respuesta es "Sí", indique cuál o cuáles:</label
+              >
+              <textarea
+                id="enfermedad-especificar"
+                name="enfermedad-especificar"
+                rows="3"
+                placeholder="Especifique las enfermedades diagnosticadas..."
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Peso y Estatura -->
+          <div class="form-row-inline">
+            <div class="form-group">
+              <label for="peso" required>Peso:</label>
+              <input
+                type="number"
+                id="peso"
+                name="peso"
+                min="10"
+                max="200"
+                step="0.1"
+                required
+                placeholder="kg"
+              />
+            </div>
+            <div class="form-group">
+              <label for="estatura" required>Estatura:</label>
+              <input
+                type="number"
+                id="estatura"
+                name="estatura"
+                min="50"
+                max="250"
+                step="0.1"
+                required
+                placeholder="cm"
+              />
+            </div>
+          </div>
+
+          <!-- Observaciones adicionales -->
+          <div class="form-row">
+            <label for="observaciones-fisicas"
+              >Observaciones adicionales sobre el estado físico:</label
+            >
+            <textarea
+              id="observaciones-fisicas"
+              name="observaciones-fisicas"
+              rows="3"
+              placeholder="Observaciones sobre condición física..."
+            ></textarea>
+          </div>
+
+          <!-- Medicamentos de uso permanente -->
+          <div class="form-row">
+            <label for="medicamentos-permanentes"
+              >Medicamentos de uso permanente:</label
+            >
+            <textarea
+              id="medicamentos-permanentes"
+              name="medicamentos-permanentes"
+              rows="3"
+              placeholder="Lista de medicamentos de uso regular..."
+            ></textarea>
+          </div>
+
+          <!-- Información adicional de salud -->
+          <div class="form-row">
+            <label for="informacion-salud-adicional"
+              >Enfermedades, alergias u otros aspectos de salud que deban
+              tenerse en cuenta:</label
+            >
+            <textarea
+              id="informacion-salud-adicional"
+              name="informacion-salud-adicional"
+              rows="4"
+              placeholder="Información adicional importante sobre la salud del estudiante..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="save-btn">Guardar Información</button>
+        </form>
+      </section>
+
+      <!-- ======== LINK Y DOCUMENTOS ======== -->
+      <section id="link-documentos" class="content" style="display: none">
+        <h2>Link y Documentos a Diligenciar</h2>
+
+        <div class="info-general-form">
+          <!-- Información principal -->
+          <div class="form-row">
+            <p><strong>Por favor:</strong></p>
+          </div>
+
+          <!-- Paso 1: Formulario en línea -->
+          <div class="form-row">
+            <div class="paso-item">
+              <h3>1. Diligencie el formulario en línea</h3>
+              <p>
+                Ingrese al siguiente enlace usando el número de identificación
+                del estudiante:
+              </p>
+              <div class="link-container">
+                <a
+                  href="https://formularios.educacionbogota.edu.co/index.php/121449?lang=es"
+                  target="_blank"
+                  class="document-link"
+                >
+                  🔗
+                  https://formularios.educacionbogota.edu.co/index.php/121449?lang=es
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 2: Descargar documentos -->
+          <div class="form-row">
+            <div class="paso-item">
+              <h3>2. Descargue los siguientes documentos:</h3>
+
+              <div class="documentos-lista">
+                <div class="documento-item">
+                  <span class="documento-icon">📄</span>
+                  <span class="documento-nombre">FORMULARIO SIMPADE 2026</span>
+                  <button type="button" class="descargar-btn">Descargar</button>
+                </div>
+
+                <div class="documento-item">
+                  <span class="documento-icon">📄</span>
+                  <span class="documento-nombre"
+                    >FORMATO DE USO DE IMAGEN 2026 MCM</span
+                  >
+                  <button type="button" class="descargar-btn">Descargar</button>
+                </div>
+
+                <div class="documento-item">
+                  <span class="documento-icon">📄</span>
+                  <span class="documento-nombre"
+                    >ACTA DE ACUERDOS Y COMPROMISOS</span
+                  >
+                  <button type="button" class="descargar-btn">Descargar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 3: Diligenciar y firmar -->
+          <div class="form-row">
+            <div class="paso-item">
+              <h3>3. Diligencie y firme cada uno de los formularios</h3>
+              <p>
+                Una vez descargados, complete toda la información requerida y
+                firme los documentos.
+              </p>
+            </div>
+          </div>
+
+          <!-- Paso 4: Adjuntar documentos -->
+          <div class="form-row">
+            <div class="paso-item">
+              <h3>4. Adjunte los documentos firmados</h3>
+              <p>
+                En la siguiente pestaña de la plataforma, cargue los documentos
+                firmados en formato PDF.
+              </p>
+              <div class="aviso-importante">
+                <strong>⚠️ Importante:</strong> Todos los documentos deben estar
+                en formato PDF y debidamente firmados.
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- ======== ADJUNTAR DOCUMENTOS ======== -->
+      <section id="adjuntar-documentos" class="content" style="display: none">
+        <h2>Adjuntar Documentos</h2>
+
+        <div class="info-general-form">
+          <!-- Información importante -->
+          <div class="form-row">
+            <div class="aviso-importante">
+              <strong>📋 INFORMACIÓN IMPORTANTE:</strong>
+              Los campos marcados con <span style="color: orange">●</span> son
+              <strong>OBLIGATORIOS</strong>. Los campos marcados con
+              <span style="color: #0078d7">○</span> son
+              <strong>OPCIONALES</strong>.
+            </div>
+          </div>
+
+          <form id="form-adjuntar-documentos">
+            <!-- Documentos obligatorios -->
+            <div class="documentos-seccion">
+              <h3>📄 Documentos Obligatorios</h3>
+
+              <!-- 1. Registro civil -->
+              <div class="documento-adjunto obligatorio">
+                <label for="registro-civil"
+                  >1. Fotocopia del registro civil del estudiante</label
+                >
+                <input
+                  type="file"
+                  id="registro-civil"
+                  name="registro-civil"
+                  accept=".pdf"
+                  required
+                />
+                <span class="requerido">● Obligatorio</span>
+              </div>
+
+              <!-- 2. Tarjeta de identidad - OPCIONAL -->
+              <div class="documento-adjunto opcional">
+                <label for="tarjeta-identidad"
+                  >2. Fotocopia de la tarjeta de identidad (para estudiantes
+                  mayores de 7 años)</label
+                >
+                <input
+                  type="file"
+                  id="tarjeta-identidad"
+                  name="tarjeta-identidad"
+                  accept=".pdf"
+                />
+                <span class="opcional-text">○ Opcional</span>
+              </div>
+
+              <!-- 3. Estudiantes extranjeros - OPCIONAL -->
+              <div class="documento-adjunto opcional">
+                <label for="documento-extranjero"
+                  >3. Para estudiantes extranjeros:</label
+                >
+                <div class="sub-documentos">
+                  <div class="sub-documento">
+                    <label for="ppt"
+                      ><strong>Migrantes de Venezuela:</strong> fotocopia del
+                      Permiso de Protección Temporal (PPT)</label
+                    >
+                    <input type="file" id="ppt" name="ppt" accept=".pdf" />
+                  </div>
+                  <div class="sub-documento">
+                    <label for="visa-menor"
+                      ><strong>Extranjeros menores de 7 años:</strong> fotocopia
+                      de la Visa</label
+                    >
+                    <input
+                      type="file"
+                      id="visa-menor"
+                      name="visa-menor"
+                      accept=".pdf"
+                    />
+                  </div>
+                  <div class="sub-documento">
+                    <label for="visa-mayor"
+                      ><strong>Extranjeros mayores de 7 años:</strong> fotocopia
+                      de la Visa y cédula de extranjería</label
+                    >
+                    <input
+                      type="file"
+                      id="visa-mayor"
+                      name="visa-mayor"
+                      accept=".pdf"
+                    />
+                  </div>
+                </div>
+                <span class="opcional-text">○ Opcional</span>
+              </div>
+
+              <!-- 7. Cédula acudiente - OPCIONAL -->
+              <div class="documento-adjunto opcional">
+                <label for="cedula-acudiente"
+                  >7. Fotocopia de la cédula del acudiente, solo en caso de que
+                  sea una persona diferente al padre o a la madre</label
+                >
+                <input
+                  type="file"
+                  id="cedula-acudiente"
+                  name="cedula-acudiente"
+                  accept=".pdf"
+                />
+                <span class="opcional-text">○ Opcional</span>
+              </div>
+
+              <!-- 8. Recibo público -->
+              <div class="documento-adjunto obligatorio">
+                <label for="recibo-publico"
+                  >8. Fotocopia del recibo público</label
+                >
+                <input
+                  type="file"
+                  id="recibo-publico"
+                  name="recibo-publico"
+                  accept=".pdf"
+                  required
+                />
+                <span class="requerido">● Obligatorio</span>
+              </div>
+
+              <!-- 9. EPS -->
+              <div class="documento-adjunto obligatorio">
+                <label for="certificado-eps"
+                  >9. Fotocopia del certificado de afiliación a la EPS
+                  <small
+                    >(puede descargarlo en:
+                    <a
+                      href="https://www.adres.gov.co/consulte-su-eps"
+                      target="_blank"
+                      >https://www.adres.gov.co/consulte-su-eps</a
+                    >)</small
+                  >
+                </label>
+                <input
+                  type="file"
+                  id="certificado-eps"
+                  name="certificado-eps"
+                  accept=".pdf"
+                  required
+                />
+                <span class="requerido">● Obligatorio</span>
+              </div>
+
+              <!-- 10. Foto -->
+              <div class="documento-adjunto obligatorio">
+                <label for="foto-estudiante"
+                  >10. Una foto reciente, tamaño 3x4</label
+                >
+                <input
+                  type="file"
+                  id="foto-estudiante"
+                  name="foto-estudiante"
+                  accept=".pdf,.jpg,.jpeg,.png"
+                  required
+                />
+                <span class="requerido">● Obligatorio</span>
+              </div>
+
+              <!-- 11. Certificados escolaridad -->
+              <div class="documento-adjunto obligatorio">
+                <label for="certificados-escolaridad"
+                  >11. Certificados de escolaridad de los grados anteriores al
+                  solicitado
+                  <small
+                    >Los certificados deben ser adjuntados en un solo archivo
+                    PDF</small
+                  >
+                </label>
+                <input
+                  type="file"
+                  id="certificados-escolaridad"
+                  name="certificados-escolaridad"
+                  accept=".pdf"
+                  required
+                />
+                <span class="requerido">● Obligatorio</span>
+              </div>
+            </div>
+
+            <!-- Documentos del sistema -->
+            <div class="documentos-seccion">
+              <h3>📋 Documentos del Sistema</h3>
+
+              <!-- 12. SIMPADE -->
+              <div class="documento-adjunto obligatorio">
+                <label for="formulario-simpade"
+                  >12. FORMULARIO SIMPADE 2026</label
+                >
+                <input
+                  type="file"
+                  id="formulario-simpade"
+                  name="formulario-simpade"
+                  accept=".pdf"
+                  required
+                />
+                <span class="requerido">● Obligatorio</span>
+              </div>
+
+              <!-- 13. Uso de imagen -->
+              <div class="documento-adjunto obligatorio">
+                <label for="formato-imagen"
+                  >13. FORMATO DE USO DE IMAGEN 2026</label
+                >
+                <input
+                  type="file"
+                  id="formato-imagen"
+                  name="formato-imagen"
+                  accept=".pdf"
+                  required
+                />
+                <span class="requerido">● Obligatorio</span>
+              </div>
+
+              <!-- 14. Acuerdos -->
+              <div class="documento-adjunto obligatorio">
+                <label for="acta-acuerdos"
+                  >14. ACTA DE ACUERDOS Y COMPROMISOS</label
+                >
+                <input
+                  type="file"
+                  id="acta-acuerdos"
+                  name="acta-acuerdos"
+                  accept=".pdf"
+                  required
+                />
+                <span class="requerido">● Obligatorio</span>
+              </div>
+            </div>
+
+            <!-- Información adicional -->
+            <div class="form-row">
+              <div class="aviso-informativo">
+                <strong>💡 Nota:</strong> Los documentos 12, 13 y 14 serán
+                enviados por WhatsApp (FORMULARIO SIMPADE 2026, FORMATO DE USO
+                DE IMAGEN 2026, ACTA DE ACUERDOS Y COMPROMISOS)
+              </div>
+            </div>
+
+            <button type="submit" class="save-btn">Enviar Documentos</button>
+          </form>
+        </div>
+      </section>
     </div>
 
-    <!-- Paso 3: Diligenciar y firmar -->
-    <div class="form-row">
-      <div class="paso-item">
-        <h3>3. Diligencie y firme cada uno de los formularios</h3>
-        <p>Una vez descargados, complete toda la información requerida y firme los documentos.</p>
-      </div>
-    </div>
-
-    <!-- Paso 4: Adjuntar documentos -->
-    <div class="form-row">
-      <div class="paso-item">
-        <h3>4. Adjunte los documentos firmados</h3>
-        <p>En la siguiente pestaña de la plataforma, cargue los documentos firmados en formato PDF.</p>
-        <div class="aviso-importante">
-          <strong>⚠️ Importante:</strong> Todos los documentos deben estar en formato PDF y debidamente firmados.
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ======== ADJUNTAR DOCUMENTOS ======== -->
-<section id="adjuntar-documentos" class="content" style="display: none;">
-  <h2>Adjuntar Documentos</h2>
-
-  <div class="info-general-form">
-    
-    <!-- Información importante -->
-    <div class="form-row">
-  <div class="aviso-importante">
-    <strong>📋 INFORMACIÓN IMPORTANTE:</strong> 
-    Los campos marcados con <span style="color: orange;">●</span> son <strong>OBLIGATORIOS</strong>.
-    Los campos marcados con <span style="color: #0078d7;">○</span> son <strong>OPCIONALES</strong>.
-  </div>
-</div>
-
-    <form id="form-adjuntar-documentos">
-      
-      <!-- Documentos obligatorios -->
-      <div class="documentos-seccion">
-        <h3>📄 Documentos Obligatorios</h3>
-        
-        <!-- 1. Registro civil -->
-        <div class="documento-adjunto obligatorio">
-          <label for="registro-civil">1. Fotocopia del registro civil del estudiante</label>
-          <input type="file" id="registro-civil" name="registro-civil" accept=".pdf" required>
-          <span class="requerido">● Obligatorio</span>
-        </div>
-
-        <!-- 2. Tarjeta de identidad - OPCIONAL -->
-<div class="documento-adjunto opcional">
-  <label for="tarjeta-identidad">2. Fotocopia de la tarjeta de identidad (para estudiantes mayores de 7 años)</label>
-  <input type="file" id="tarjeta-identidad" name="tarjeta-identidad" accept=".pdf">
-  <span class="opcional-text">○ Opcional</span>
-</div>
-
-<!-- 3. Estudiantes extranjeros - OPCIONAL -->
-<div class="documento-adjunto opcional">
-  <label for="documento-extranjero">3. Para estudiantes extranjeros:</label>
-  <div class="sub-documentos">
-    <div class="sub-documento">
-      <label for="ppt"><strong>Migrantes de Venezuela:</strong> fotocopia del Permiso de Protección Temporal (PPT)</label>
-      <input type="file" id="ppt" name="ppt" accept=".pdf">
-    </div>
-    <div class="sub-documento">
-      <label for="visa-menor"><strong>Extranjeros menores de 7 años:</strong> fotocopia de la Visa</label>
-      <input type="file" id="visa-menor" name="visa-menor" accept=".pdf">
-    </div>
-    <div class="sub-documento">
-      <label for="visa-mayor"><strong>Extranjeros mayores de 7 años:</strong> fotocopia de la Visa y cédula de extranjería</label>
-      <input type="file" id="visa-mayor" name="visa-mayor" accept=".pdf">
-    </div>
-  </div>
-  <span class="opcional-text">○ Opcional</span>
-</div>
-
-<!-- 7. Cédula acudiente - OPCIONAL -->
-<div class="documento-adjunto opcional">
-  <label for="cedula-acudiente">7. Fotocopia de la cédula del acudiente, solo en caso de que sea una persona diferente al padre o a la madre</label>
-  <input type="file" id="cedula-acudiente" name="cedula-acudiente" accept=".pdf">
-  <span class="opcional-text">○ Opcional</span>
-</div>
-
-        <!-- 8. Recibo público -->
-        <div class="documento-adjunto obligatorio">
-          <label for="recibo-publico">8. Fotocopia del recibo público</label>
-          <input type="file" id="recibo-publico" name="recibo-publico" accept=".pdf" required>
-          <span class="requerido">● Obligatorio</span>
-        </div>
-
-        <!-- 9. EPS -->
-        <div class="documento-adjunto obligatorio">
-          <label for="certificado-eps">9. Fotocopia del certificado de afiliación a la EPS 
-            <small>(puede descargarlo en: <a href="https://www.adres.gov.co/consulte-su-eps" target="_blank">https://www.adres.gov.co/consulte-su-eps</a>)</small>
-          </label>
-          <input type="file" id="certificado-eps" name="certificado-eps" accept=".pdf" required>
-          <span class="requerido">● Obligatorio</span>
-        </div>
-
-        <!-- 10. Foto -->
-        <div class="documento-adjunto obligatorio">
-          <label for="foto-estudiante">10. Una foto reciente, tamaño 3x4</label>
-          <input type="file" id="foto-estudiante" name="foto-estudiante" accept=".pdf,.jpg,.jpeg,.png" required>
-          <span class="requerido">● Obligatorio</span>
-        </div>
-
-        <!-- 11. Certificados escolaridad -->
-        <div class="documento-adjunto obligatorio">
-          <label for="certificados-escolaridad">11. Certificados de escolaridad de los grados anteriores al solicitado
-            <small>Los certificados deben ser adjuntados en un solo archivo PDF</small>
-          </label>
-          <input type="file" id="certificados-escolaridad" name="certificados-escolaridad" accept=".pdf" required>
-          <span class="requerido">● Obligatorio</span>
-        </div>
-
-      </div>
-
-      <!-- Documentos del sistema -->
-      <div class="documentos-seccion">
-        <h3>📋 Documentos del Sistema</h3>
-        
-        <!-- 12. SIMPADE -->
-        <div class="documento-adjunto obligatorio">
-          <label for="formulario-simpade">12. FORMULARIO SIMPADE 2026</label>
-          <input type="file" id="formulario-simpade" name="formulario-simpade" accept=".pdf" required>
-          <span class="requerido">● Obligatorio</span>
-        </div>
-
-        <!-- 13. Uso de imagen -->
-        <div class="documento-adjunto obligatorio">
-          <label for="formato-imagen">13. FORMATO DE USO DE IMAGEN 2026</label>
-          <input type="file" id="formato-imagen" name="formato-imagen" accept=".pdf" required>
-          <span class="requerido">● Obligatorio</span>
-        </div>
-
-        <!-- 14. Acuerdos -->
-        <div class="documento-adjunto obligatorio">
-          <label for="acta-acuerdos">14. ACTA DE ACUERDOS Y COMPROMISOS</label>
-          <input type="file" id="acta-acuerdos" name="acta-acuerdos" accept=".pdf" required>
-          <span class="requerido">● Obligatorio</span>
-        </div>
-      </div>
-
-      <!-- Información adicional -->
-      <div class="form-row">
-        <div class="aviso-informativo">
-          <strong>💡 Nota:</strong> Los documentos 12, 13 y 14 serán enviados por WhatsApp (FORMULARIO SIMPADE 2026, FORMATO DE USO DE IMAGEN 2026, ACTA DE ACUERDOS Y COMPROMISOS)
-        </div>
-      </div>
-
-      <button type="submit" class="save-btn">Enviar Documentos</button>
-    </form>
-  </div>
-</section>
-  </div>
-  
-
-
-  <script src="assets/js/main.js"></script>
-</body>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
